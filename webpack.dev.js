@@ -9,12 +9,12 @@ module.exports = merge(commonConfig, {
     "react-hot-loader/patch",
     "webpack-dev-server/client?http://localhost:8080",
     "webpack/hot/only-dev-server",
-    "./client/index.jsx"
+    "./index.js"
   ],
   devtool: "inline-source-map",
   devServer: {
     hot: true,
-    contentBase: path.resolve(__dirname, "./dist/public"),
+    contentBase: path.resolve(__dirname, "./dist"),
     port: 8080,
     host: "localhost",
     publicPath: "/",

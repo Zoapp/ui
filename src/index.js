@@ -11,7 +11,7 @@ import ContentEditable from "./components/mdl/mdl-contentEditable";
 import ExpansionPanel from "./components/mdl/mdl-expansionPanel";
 import BasicDialog from "./dialogs/basicDialog";
 import DialogManager from "./dialogs/dialogManager";
-import DialogPolyFill from "./dialogs/dialogPolyFill";
+import DialogBox from "./dialogs/dialogBox";
 
 export {
   Stepper,
@@ -20,6 +20,6 @@ export {
   ContentEditable,
   ExpansionPanel,
   BasicDialog,
-  DialogPolyFill,
+  DialogBox,
   DialogManager,
 };

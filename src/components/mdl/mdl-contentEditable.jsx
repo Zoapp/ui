@@ -43,7 +43,7 @@ class MdlContentEditable extends Component {
     // WIP
     const element = e.target;
     if (element.tabIndex !== 0) {
-      console.log("onFocus In ", element);
+      // console.log("onFocus In ", element);
       const caretPosition = this.updateCaretPosition(element);
       this.props.onFocusIn(element, caretPosition);
       // e.preventDefault();
@@ -55,7 +55,7 @@ class MdlContentEditable extends Component {
     const element = e.target;
     if (element.tabIndex !== 0) {
       const caretPosition = this.updateCaretPosition(element);
-      console.log("onMouseUp ", caretPosition);
+      // console.log("onMouseUp ", caretPosition);
     }
   }
 
@@ -132,7 +132,7 @@ class MdlContentEditable extends Component {
       // range.collapse(false);
       sel.removeAllRanges();
       sel.addRange(range);
-      console.log("setFocus");
+      // console.log("setFocus");
     }
   }
 
@@ -148,7 +148,7 @@ class MdlContentEditable extends Component {
     const element = e.target;
     if (element.tabIndex !== 0) {
       const caretPosition = this.updateCaretPosition(element);
-      console.log("navigate", name, caretPosition);
+      // console.log("navigate", name, caretPosition);
     }
   }
 

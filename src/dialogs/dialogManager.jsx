@@ -5,7 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from "react";
+import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
+import BasicDialog from "./basicDialog";
 
 // Inspiration
 // https://github.com/xue2han/react-dynamic-modal/blob/master/src/Modal.js

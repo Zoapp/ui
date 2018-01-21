@@ -4,10 +4,10 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { Component } from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-export default class DialogPolyFill extends Component {
+export default class DialogBox extends Component {
   constructor(props) {
     super(props);
     this.dialogWidth = 0;
@@ -91,14 +91,14 @@ export default class DialogPolyFill extends Component {
   }
 }
 
-DialogPolyFill.defaultProps = {
+DialogBox.defaultProps = {
   className: "",
   style: null,
   open: true,
   onCancel: null,
 };
 
-DialogPolyFill.propTypes = {
+DialogBox.propTypes = {
   onClose: PropTypes.func.isRequired,
   onCancel: PropTypes.func,
   className: PropTypes.string,

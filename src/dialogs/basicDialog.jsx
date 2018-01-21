@@ -4,9 +4,11 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { Component } from "react";
+import React, { Component } from "react";
+import { Button, DialogTitle, DialogContent, DialogActions, Textfield } from "react-mdl";
 import PropTypes from "prop-types";
 import DialogManager from "./dialogManager";
+import DialogBox from "./dialogBox";
 
 class BasicDialog extends Component {
   constructor(props) {
@@ -122,7 +124,7 @@ class BasicDialog extends Component {
       style = { width: this.props.width };
     }
     return (
-      <DialogPolyFill
+      <DialogBox
         open={this.state.openDialog}
         id={this.state.id}
         className={this.props.className}
@@ -134,7 +136,7 @@ class BasicDialog extends Component {
           {content}
         </DialogContent>
         {actionMenu}
-      </DialogPolyFill>
+      </DialogBox>
     );
   }
 }

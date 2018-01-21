@@ -54,7 +54,7 @@ class MdlContentEditable extends Component {
   onMouseUp = (e) => {
     const element = e.target;
     if (element.tabIndex !== 0) {
-      const caretPosition = this.updateCaretPosition(element);
+      /* const caretPosition = */this.updateCaretPosition(element);
       // console.log("onMouseUp ", caretPosition);
     }
   }
@@ -144,10 +144,10 @@ class MdlContentEditable extends Component {
     return caretPosition;
   }
 
-  navigate(e, name) {
+  navigate(e /* , name */) {
     const element = e.target;
     if (element.tabIndex !== 0) {
-      const caretPosition = this.updateCaretPosition(element);
+      /* const caretPosition = */ this.updateCaretPosition(element);
       // console.log("navigate", name, caretPosition);
     }
   }

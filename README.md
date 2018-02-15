@@ -1,11 +1,11 @@
 # zoapp-ui
 
 [![Build
-Status](https://travis-ci.org/Zoapp/zui.svg?branch=master)](https://travis-ci.org/Zoapp/zui)
+Status](https://travis-ci.org/Zoapp/ui.svg?branch=master)](https://travis-ci.org/Zoapp/ui)
 [![Codacy
-Badge](https://api.codacy.com/project/badge/Grade/213fd0cba50f425fb159120fdff19a22)](https://www.codacy.com/app/zoapp/zui?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Zoapp/zui&amp;utm_campaign=Badge_Grade)
+Badge](https://api.codacy.com/project/badge/Grade/213fd0cba50f425fb159120fdff19a22)](https://www.codacy.com/app/zoapp/ui?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Zoapp/ui&amp;utm_campaign=Badge_Grade)
 [![GitHub
-license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/zoapp/zui/blob/master/LICENSE)
+license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/zoapp/ui/blob/master/LICENSE)
 [![npm
 version](https://badge.fury.io/js/zoapp-ui.svg)](https://badge.fury.io/js/zoapp-ui)
 

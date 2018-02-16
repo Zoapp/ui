@@ -9,9 +9,6 @@ import Selectfield from "./components/mdl/mdl-selectfield";
 import ListItemContentEx from "./components/mdl/mdl-listItemContentEx";
 import ContentEditable from "./components/mdl/mdl-contentEditable";
 import ExpansionPanel from "./components/mdl/mdl-expansionPanel";
-import BasicDialog from "./dialogs/basicDialog";
-import DialogManager from "./dialogs/dialogManager";
-import DialogBox from "./dialogs/dialogBox";
 
 export {
   Stepper,
@@ -19,7 +16,4 @@ export {
   ListItemContentEx,
   ContentEditable,
   ExpansionPanel,
-  BasicDialog,
-  DialogBox,
-  DialogManager,
 };

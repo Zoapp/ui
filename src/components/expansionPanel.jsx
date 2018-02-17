@@ -6,9 +6,9 @@
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { IconButton } from "react-mdl";
+import { Icon } from "zoapp-materialcomponents";
 
-class MdlExpansionPanel extends Component {
+class ExpansionPanel extends Component {
   constructor(props) {
     super(props);
     const { collapsed } = props;
@@ -33,7 +33,12 @@ class MdlExpansionPanel extends Component {
     return (
       <div className="mrb-sublist">
         <div className="mrb-subheader">
-          <IconButton name={icon} className="mrb-subheader-right" disabled={disabled} onClick={(e) => { e.preventDefault(); this.onSwitch(); }} /><div>{label}</div>
+          <Icon
+            name={icon}
+            className="mrb-subheader-right"
+            disabled={disabled}
+            onClick={(e) => { e.preventDefault(); this.onSwitch(); }}
+          /><div>{label}</div>
         </div>
         <div style={style} >
           {children}
@@ -43,12 +48,12 @@ class MdlExpansionPanel extends Component {
   }
 }
 
-MdlExpansionPanel.defaultProps = {
+ExpansionPanel.defaultProps = {
   collapsed: false,
   disabled: false,
 };
 
-MdlExpansionPanel.propTypes = {
+ExpansionPanel.propTypes = {
   collapsed: PropTypes.bool,
   disabled: PropTypes.bool,
   label: PropTypes.string.isRequired,
@@ -58,4 +63,4 @@ MdlExpansionPanel.propTypes = {
   ]).isRequired,
 };
 
-export default MdlExpansionPanel;
+export default ExpansionPanel;

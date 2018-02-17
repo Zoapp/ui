@@ -8,7 +8,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // Inspired from https://codepen.io/anon/pen/KqYGNZ
-const MdlStepper = (props) => {
+const Stepper = (props) => {
   const { steps } = props;
   return (
     <div className="mdl-stepper-horizontal-alternative">
@@ -43,8 +43,8 @@ const MdlStepper = (props) => {
     </div>);
 };
 
-MdlStepper.propTypes = {
+Stepper.propTypes = {
   steps: PropTypes.arrayOf().isRequired,
 };
 
-export default MdlStepper;
+export default Stepper;

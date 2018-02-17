@@ -8,7 +8,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 // Inspired from https://github.com/bmcmahen/react-wysiwyg/blob/master/index.js
-class MdlContentEditable extends Component {
+class ContentEditable extends Component {
   constructor(props) {
     super(props);
     const caretPosition = this.props.caretPosition || -1;
@@ -189,7 +189,7 @@ class MdlContentEditable extends Component {
   }
 }
 
-MdlContentEditable.defaultProps = {
+ContentEditable.defaultProps = {
   className: null,
   selectedItem: -1,
   content: "",
@@ -199,7 +199,7 @@ MdlContentEditable.defaultProps = {
   style: null,
 };
 
-MdlContentEditable.propTypes = {
+ContentEditable.propTypes = {
   className: PropTypes.string,
   selectedItem: PropTypes.number,
   content: PropTypes.string,
@@ -210,4 +210,4 @@ MdlContentEditable.propTypes = {
   style: PropTypes.objectOf(PropTypes.string),
 };
 
-export default MdlContentEditable;
+export default ContentEditable;

@@ -1,2 +1,4 @@
 exclude_paths:
-  - 'webpack.*.js'
+    - 'webpack.*.js'
+    - 'tests/**'
+    - 'src/server/**'

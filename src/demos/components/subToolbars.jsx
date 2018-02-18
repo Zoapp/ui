@@ -5,9 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from "react";
-import {
-  SubToolbar,
-} from "../../../src/libs";
+import { SubToolbar } from "../../../src/libs";
 
 export default () => (
   <section>

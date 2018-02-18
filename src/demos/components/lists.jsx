@@ -5,9 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from "react";
-import {
-  ListComponent, ListDragComponent,
-} from "../../../src/libs";
+import { ListComponent, ListDragComponent } from "../../../src/libs";
 
 export default () => (
   <section>

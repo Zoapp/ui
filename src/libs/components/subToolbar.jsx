@@ -6,7 +6,7 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
-import { IconButton, Menu, MenuItem } from "zoapp-materialcomponents";
+import { Icon, Menu, MenuItem } from "zoapp-materialcomponents";
 import HeaderIcon from "./headerIcon";
 
 const SubToolbar = ({
@@ -20,24 +20,25 @@ const SubToolbar = ({
       const id = `${titleName}-menu`;
       const align = menu.align ? menu.align : "left";
       const { items } = menu;
+      const me = (
+        <Menu target={id} align={align}>
+          {items.map((m, index) => {
+            const key = `m_${index}`;
+            if (m.disabled) {
+              return (<MenuItem key={key} disabled>{m.name}</MenuItem>);
+            }
+            return (
+              <MenuItem
+                key={key}
+                onClick={(e) => { e.preventDefault(); if (m.onSelect) m.onSelect(m.name); }}
+              >
+                {m.name}
+              </MenuItem>);
+          })}
+        </Menu>);
       return (
         <div>
-          <IconButton name="more_vert" id={id} className="mrb-subheader-menu" />
-          <Menu target={id} align={align}>
-            {items.map((m, index) => {
-              const key = `m_${index}`;
-              if (m.disabled) {
-                return (<MenuItem key={key} disabled>{m.name}</MenuItem>);
-              }
-              return (
-                <MenuItem
-                  key={key}
-                  onClick={(e) => { e.preventDefault(); if (m.onSelect) m.onSelect(m.name); }}
-                >
-                  {m.name}
-                </MenuItem>);
-            })}
-          </Menu>
+          <Icon name="more_vert" id={id} className="mrb-subheader-menu" menu={me} />
         </div>);
     }
     return (<div />);
@@ -50,7 +51,7 @@ const SubToolbar = ({
           {icons.map((icon, index) => {
             const key = `m_${index}`;
             return (
-              <IconButton
+              <Icon
                 key={key}
                 name={icon.name}
                 onClick={(e) => {

@@ -9,10 +9,12 @@ import PropTypes from "prop-types";
 import ContentEditables from "./components/contentEditables";
 import ExpansionPanels from "./components/expansionPanels";
 import Steppers from "./components/steppers";
+import SubToolbars from "./components/subToolbars";
 
 const Main = ({ children }) => (
   <main>
     {children}
+    <SubToolbars />
     <ContentEditables />
     <ExpansionPanels />
     <Steppers />

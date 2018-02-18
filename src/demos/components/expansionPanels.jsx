@@ -6,15 +6,19 @@
  */
 import React from "react";
 import {
-  ContentEditable,
+  ExpansionPanel,
 } from "../../../src/libs";
 
 export default () => (
   <section>
     <h1>ExpansionPanel examples </h1>
     <div style={{ padding: "16px" }}>
-      <ContentEditable />
+      <ExpansionPanel label="name 1">
+        <div style={{ width: "600px", height: "300px" }} />
+      </ExpansionPanel>
+      <ExpansionPanel label="name 2">
+        <div style={{ width: "600px", height: "300px" }} />
+      </ExpansionPanel>
     </div>
-    <h2>Tabs Properties</h2>
   </section>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TableComponent from '@shared/components/tableComponent';
+import TableComponent from '@libs/components/tableComponent';
 
 describe('TableComponent', () => {
   const newItem = ({ id, name, values = [], icon = null }) => {

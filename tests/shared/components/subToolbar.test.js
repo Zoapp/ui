@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import SubToolbar from "@shared/components/subToolbar";
+import SubToolbar from "@libs/components/subToolbar";
 
 describe("SubToolbar", () => {
   it("renders correctly", () => {

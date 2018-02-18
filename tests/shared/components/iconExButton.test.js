@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import IconExButton from '@shared/components/iconExButton';
+import IconExButton from '@libs/components/iconExButton';
 
 describe('IconExButton', () => {
   it('renders a robot icon', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ListComponent from '@shared/components/listComponent';
+import ListComponent from '@libs/components/list/listComponent';
 
 describe('ListComponent', () => {
   const newItem = ({ id, name, icon = null }) => {

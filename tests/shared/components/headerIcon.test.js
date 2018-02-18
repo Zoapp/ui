@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HeaderIcon from '@shared/components/headerIcon';
+import HeaderIcon from '@libs/components/headerIcon';
 
 describe('HeaderIcon', () => {
   it('renders a robot icon', () => {

@@ -2,215 +2,112 @@
 
 exports[`ListComponent marks an item as selected 1`] = `
 <ul
-  className="mdl-list some-class"
+  className="some-class mdc-list"
   style={Object {}}
 >
   <li
-    className="mdl-list__item selectableListItem"
-    onClick={[Function]}
+    className="selectableListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
-    >
-      <span>
-        item 1
-      </span>
-    </span>
+    item 1
   </li>
   <li
-    className="mdl-list__item selectedListItem"
-    onClick={[Function]}
+    className="selectedListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
-    >
-      <span>
-        item 2
-      </span>
-    </span>
+    item 2
   </li>
   <li
-    className="mdl-list__item selectableListItem"
-    onClick={[Function]}
+    className="selectableListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
-    >
-      <span>
-        item 3
-      </span>
-    </span>
+    item 3
   </li>
 </ul>
 `;
 
 exports[`ListComponent renders PNG icon 1`] = `
 <ul
-  className="mdl-list some-class"
+  className="some-class mdc-list"
   style={Object {}}
 >
   <li
-    className="mdl-list__item selectedListItem"
-    onClick={[Function]}
+    className="selectedListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
-    >
-      <div
-        className="mdl-list__item-avatar"
-        style={
-          Object {
-            "backgroundColor": "gray",
-            "padding": "8px",
-          }
-        }
-      >
-        <img
-          alt="item 1"
-          src="some-icon.png"
-          style={
-            Object {
-              "margin": "-7px",
-              "verticalAlign": "top",
-              "width": "38px",
-            }
-          }
-        />
-      </div>
-      <span>
-        item 1
-      </span>
-    </span>
+    <img
+      alt={null}
+      className="mdc-list-item__graphic"
+      height={56}
+      src="some-icon.png"
+      width={56}
+    />
+    item 1
   </li>
 </ul>
 `;
 
 exports[`ListComponent renders SVG icon 1`] = `
 <ul
-  className="mdl-list some-class"
+  className="some-class mdc-list"
   style={Object {}}
 >
   <li
-    className="mdl-list__item selectedListItem"
-    onClick={[Function]}
+    className="selectedListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
-    >
-      <div
-        className="mdl-list__item-avatar"
-        style={
-          Object {
-            "backgroundColor": "gray",
-            "padding": "8px",
-          }
-        }
-      >
-        <img
-          alt="item 1"
-          src="some-icon.svg"
-          style={
-            Object {
-              "verticalAlign": "top",
-            }
-          }
-        />
-      </div>
-      <span>
-        item 1
-      </span>
-    </span>
+    <img
+      alt={null}
+      className="mdc-list-item__graphic"
+      height={56}
+      src="some-icon.svg"
+      width={56}
+    />
+    item 1
   </li>
 </ul>
 `;
 
 exports[`ListComponent renders correctly 1`] = `
 <ul
-  className="mdl-list some-class"
+  className="some-class mdc-list"
   style={Object {}}
 />
 `;
 
 exports[`ListComponent renders items 1`] = `
 <ul
-  className="mdl-list some-class"
+  className="some-class mdc-list"
   style={Object {}}
 >
   <li
-    className="mdl-list__item selectedListItem"
-    onClick={[Function]}
+    className="selectedListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
-    >
-      <span>
-        item 1
-      </span>
-    </span>
+    item 1
   </li>
   <li
-    className="mdl-list__item selectableListItem"
-    onClick={[Function]}
+    className="selectableListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
-    >
-      <span>
-        item 2
-      </span>
-    </span>
+    item 2
   </li>
   <li
-    className="mdl-list__item selectableListItem"
-    onClick={[Function]}
+    className="selectableListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
-    >
-      <span>
-        item 3
-      </span>
-    </span>
+    item 3
   </li>
 </ul>
 `;
 
 exports[`ListComponent renders items with icons 1`] = `
 <ul
-  className="mdl-list some-class"
+  className="some-class mdc-list"
   style={Object {}}
 >
   <li
-    className="mdl-list__item selectedListItem"
-    onClick={[Function]}
+    className="selectedListItem mdc-list-item"
   >
-    <span
-      className="mdl-list__item-primary-content"
+    <i
+      aria-hidden="true"
+      className="mdc-list-item__graphic material-icons"
     >
-      <div
-        className="mdl-list__item-avatar"
-        style={
-          Object {
-            "backgroundColor": "gray",
-            "padding": "8px",
-          }
-        }
-      >
-        <i
-          className="material-icons"
-          style={
-            Object {
-              "verticalAlign": "top",
-            }
-          }
-        >
-          some-icon
-        </i>
-      </div>
-      <span>
-        item 1
-      </span>
-    </span>
+      some-icon
+    </i>
+    item 1
   </li>
 </ul>
 `;

@@ -90,7 +90,7 @@ export default class ListDragItem extends Component {
     const {
       connectDragSource,
       connectDropTarget,
-      children, 
+      children,
       type,
       icon,
       activated,
@@ -114,7 +114,14 @@ export default class ListDragItem extends Component {
     if (icon) {
       graphic = (<Icon className="mdc-list-item__graphic" aria-hidden="true" name={icon} />);
     } else if (imgSrc) {
-      graphic = (<img className="mdc-list-item__graphic" src={imgSrc} width={imgSize} height={imgSize} alt={imgLabel} />);
+      graphic = (
+        <img
+          className="mdc-list-item__graphic"
+          src={imgSrc}
+          width={imgSize}
+          height={imgSize}
+          alt={imgLabel}
+        />);
     }
     let meta;
     let text = Children.map(children, (child) => {
@@ -125,7 +132,10 @@ export default class ListDragItem extends Component {
       return child;
     });
     if (secondaryText) {
-      text = (<span className="mdc-list-item__text">{text}<span className="mdc-list-item__secondary-text">{secondaryText}</span></span>);
+      text = (
+        <span className="mdc-list-item__text">{text}
+          <span className="mdc-list-item__secondary-text">{secondaryText}</span>
+        </span>);
     }
     let el;
     if (type === "a") {

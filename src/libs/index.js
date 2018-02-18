@@ -14,6 +14,7 @@ import IconExButton from "./components/iconExButton";
 import SubToolbar from "./components/subToolbar";
 import ContentEditable from "./components/contentEditable";
 import ExpansionPanel from "./components/expansionPanel";
+import TableComponent from "./components/tableComponent";
 
 export {
   Stepper,
@@ -26,4 +27,5 @@ export {
   HeaderIcon,
   IconExButton,
   SubToolbar,
+  TableComponent,
 };

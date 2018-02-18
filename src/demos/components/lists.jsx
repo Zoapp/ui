@@ -6,7 +6,7 @@
  */
 import React from "react";
 import {
-  ListComponent,
+  ListComponent, ListDragComponent,
 } from "../../../src/libs";
 
 export default () => (
@@ -16,17 +16,35 @@ export default () => (
       <ListComponent
         items={[
           {
-            id: 1, name: "Item 1", icon: "add", color: "gray",
+            id: "i1", name: "Item 1", icon: "add", color: "gray",
           },
           {
-            id: 2, name: "Item 2", icon: "add", color: "gray",
+            id: "i2", name: "Item 2", icon: "add", color: "gray",
           },
           {
-            id: 3, name: "Item 3", icon: "add", color: "gray",
+            id: "i3", name: "Item 3", icon: "add", color: "gray",
           },
         ]}
         selectedItem={-1}
         onSelect={() => {}}
+      />
+    </div>
+    <div style={{ padding: "16px" }}>
+      <ListDragComponent
+        items={[
+          {
+            id: "i1", name: "Drag item 1", icon: "add", color: "gray",
+          },
+          {
+            id: "i2", name: "Drag item 2", icon: "add", color: "gray",
+          },
+          {
+            id: "i3", name: "Drag item 3", icon: "add", color: "gray",
+          },
+        ]}
+        selectedItem={-1}
+        onSelect={() => {}}
+        onDrop={() => {}}
       />
     </div>
   </section>

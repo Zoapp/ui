@@ -44,7 +44,7 @@ const Stepper = (props) => {
 };
 
 Stepper.propTypes = {
-  steps: PropTypes.arrayOf().isRequired,
+  steps: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export default Stepper;

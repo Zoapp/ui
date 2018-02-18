@@ -24,8 +24,12 @@ const Main = ({ children }) => (
   </main>
 );
 
+Main.defaultProps = {
+  children: null,
+};
+
 Main.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default Main;

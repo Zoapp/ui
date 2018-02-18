@@ -28,6 +28,7 @@ class ListDragComponent extends Component {
                 key={item.id}
                 onMove={onMove}
                 onDrop={onDrop}
+                icon={item.icon}
                 onClick={
                   (e) => { e.preventDefault(); onSelect(index); }}
                 className="selectedListItem"
@@ -41,6 +42,7 @@ class ListDragComponent extends Component {
               key={item.id}
               onMove={onMove}
               onDrop={onDrop}
+              icon={item.icon}
               onClick={
                 (e) => { e.preventDefault(); onSelect(index); }}
               className="selectableListItem"

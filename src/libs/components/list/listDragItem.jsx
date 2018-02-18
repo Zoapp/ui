@@ -4,10 +4,12 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { Component, Children, cloneElement } from "react";
+import React, { Component, Children } from "react";
 import PropTypes from "prop-types";
 import { DragSource, DropTarget } from "react-dnd";
-import { ListItemContent } from "zoapp-materialcomponents";
+import Rmdc, { Icon } from "zoapp-materialcomponents";
+
+const MDC_LISTITEM = "mdc-list-item";
 
 const itemSource = {
   beginDrag(props) {
@@ -84,65 +86,92 @@ const itemTarget = {
   isDragging: monitor.isDragging(),
 }))
 export default class ListDragItem extends Component {
-  static defaultProps = {
-    children: null,
-    className: null,
-    twoLine: false,
-    threeLine: false,
-    onMove: null,
-    onDrop: null,
-  };
-
-  static propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
-    twoLine: PropTypes.bool,
-    threeLine: PropTypes.bool,
-    connectDragSource: PropTypes.func.isRequired,
-    connectDropTarget: PropTypes.func.isRequired,
-    index: PropTypes.number.isRequired,
-    isDragging: PropTypes.bool.isRequired,
-    id: PropTypes.string.isRequired,
-    onMove: PropTypes.func,
-    onDrop: PropTypes.func,
-  };
-
   render() {
     const {
-      connectDragSource, connectDropTarget, className, twoLine, threeLine, ...otherProps
+      connectDragSource,
+      connectDropTarget,
+      children, 
+      type,
+      icon,
+      activated,
+      imgSrc,
+      imgSize,
+      imgLabel,
+      secondaryText,
+      href,
+      ...otherProps
     } = this.props;
     delete otherProps.index;
     delete otherProps.onMove;
     delete otherProps.onDrop;
     delete otherProps.isDragging;
 
-    /* const opacity = isDragging ? 0 : 1; */
-
-    let classes = "mdl-list__item";
-    if (twoLine && !threeLine) {
-      classes += " mdl-list__item--two-line";
-    } else if (!twoLine && threeLine) {
-      classes += " mdl-list__item--two-line";
+    let classes = MDC_LISTITEM;
+    let graphic;
+    if (activated) {
+      classes += " mdc-list-item--activated";
     }
-    if (className) {
-      classes += ` ${className}`;
+    if (icon) {
+      graphic = (<Icon className="mdc-list-item__graphic" aria-hidden="true" name={icon} />);
+    } else if (imgSrc) {
+      graphic = (<img className="mdc-list-item__graphic" src={imgSrc} width={imgSize} height={imgSize} alt={imgLabel} />);
     }
-
-    const children = Children.map(otherProps.children, (child) => {
-      if (typeof child === "string") {
-        return <ListItemContent>{child}</ListItemContent>;
-      }
-      if (child.type === ListItemContent) {
-        return cloneElement(child, {
-          useBodyClass: !!threeLine,
-        });
+    let meta;
+    let text = Children.map(children, (child) => {
+      if (child.props && child.props.mdcElement === "mdc-list-item__meta") {
+        meta = child;
+        return null;
       }
       return child;
     });
-    return connectDragSource(connectDropTarget((
-      <li className={classes} {...otherProps} ref={(r) => { this.ref = r; }}>
-        {children}
-      </li>)));
+    if (secondaryText) {
+      text = (<span className="mdc-list-item__text">{text}<span className="mdc-list-item__secondary-text">{secondaryText}</span></span>);
+    }
+    let el;
+    if (type === "a") {
+      el = Rmdc.render(<a className={classes} href={href} >{graphic}{text}{meta}</a>, otherProps);
+    } else {
+      el = Rmdc.render(<li className={classes} >{graphic}{text}{meta}</li>, otherProps);
+    }
+    return connectDragSource(connectDropTarget(el));
   }
 }
+
+ListDragItem.defaultProps = {
+  mdcElement: MDC_LISTITEM,
+  children: null,
+  type: "li",
+  activated: false,
+  icon: null,
+  imgSrc: null,
+  imgSize: 56,
+  imgLabel: null,
+  secondaryText: null,
+  href: null,
+  onMove: null,
+  onDrop: null,
+  connectDragSource: null,
+  connectDropTarget: null,
+  isDragging: false,
+};
+
+ListDragItem.propTypes = {
+  mdcElement: PropTypes.string,
+  children: PropTypes.node,
+  type: PropTypes.string,
+  activated: PropTypes.bool,
+  icon: PropTypes.string,
+  imgSrc: PropTypes.string,
+  imgSize: PropTypes.number,
+  imgLabel: PropTypes.string,
+  secondaryText: PropTypes.string,
+  href: PropTypes.string,
+  connectDragSource: PropTypes.func,
+  connectDropTarget: PropTypes.func,
+  isDragging: PropTypes.bool,
+  index: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  onMove: PropTypes.func,
+  onDrop: PropTypes.func,
+};
 

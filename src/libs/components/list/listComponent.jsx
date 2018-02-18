@@ -50,6 +50,11 @@ const ListComponent = ({
   </List>
 );
 
+ListComponent.defaultProps = {
+  className: null,
+  style: null,
+};
+
 ListComponent.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
@@ -58,8 +63,8 @@ ListComponent.propTypes = {
   })).isRequired,
   selectedItem: PropTypes.number.isRequired,
   onSelect: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired,
-  style: PropTypes.objectOf(PropTypes.string).isRequired,
+  className: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 export default ListComponent;

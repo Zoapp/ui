@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListComponent marks an item as selected 1`] = `
+<ul
+  className="some-class mdc-list"
+  style={Object {}}
+>
+  <li
+    className="selectableListItem mdc-list-item"
+  >
+    item 1
+  </li>
+  <li
+    className="selectedListItem mdc-list-item"
+  >
+    item 2
+  </li>
+  <li
+    className="selectableListItem mdc-list-item"
+  >
+    item 3
+  </li>
+</ul>
+`;
+
+exports[`ListComponent renders PNG icon 1`] = `
+<ul
+  className="some-class mdc-list"
+  style={Object {}}
+>
+  <li
+    className="selectedListItem mdc-list-item"
+  >
+    <img
+      alt={null}
+      className="mdc-list-item__graphic"
+      height={56}
+      src="some-icon.png"
+      width={56}
+    />
+    item 1
+  </li>
+</ul>
+`;
+
+exports[`ListComponent renders SVG icon 1`] = `
+<ul
+  className="some-class mdc-list"
+  style={Object {}}
+>
+  <li
+    className="selectedListItem mdc-list-item"
+  >
+    <img
+      alt={null}
+      className="mdc-list-item__graphic"
+      height={56}
+      src="some-icon.svg"
+      width={56}
+    />
+    item 1
+  </li>
+</ul>
+`;
+
+exports[`ListComponent renders correctly 1`] = `
+<ul
+  className="some-class mdc-list"
+  style={Object {}}
+/>
+`;
+
+exports[`ListComponent renders items 1`] = `
+<ul
+  className="some-class mdc-list"
+  style={Object {}}
+>
+  <li
+    className="selectedListItem mdc-list-item"
+  >
+    item 1
+  </li>
+  <li
+    className="selectableListItem mdc-list-item"
+  >
+    item 2
+  </li>
+  <li
+    className="selectableListItem mdc-list-item"
+  >
+    item 3
+  </li>
+</ul>
+`;
+
+exports[`ListComponent renders items with icons 1`] = `
+<ul
+  className="some-class mdc-list"
+  style={Object {}}
+>
+  <li
+    className="selectedListItem mdc-list-item"
+  >
+    <i
+      aria-hidden="true"
+      className="mdc-list-item__graphic material-icons"
+    >
+      some-icon
+    </i>
+    item 1
+  </li>
+</ul>
+`;

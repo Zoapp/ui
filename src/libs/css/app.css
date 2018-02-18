@@ -55,6 +55,70 @@
   color: #757575;
 }
 
+.mrb-panel {
+  min-width: 150px;
+}
+
+.mrb-panel-header {
+  padding: 0px;
+  background: white;
+  color: #757575;
+  font-size: 18px;
+  line-height: 48px;
+  height: 48px;
+  min-height: 48px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.mrb-panel-empty {
+  background: linear-gradient(to bottom, 
+  rgba(255, 255, 255, 0.95) 0%,
+  rgba(255, 255, 255, 0.85) 70%,
+  rgba(255, 255, 255, 0.75) 100%);
+}
+
+.mrb-panel-empty::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 64.5%;
+  height: 80%;
+  z-index: -1;
+  background-position: 100% 0;
+  /*background-image: url("../images/bot-builder.gif");*/
+  background-repeat: no-repeat;
+}
+
+.mrb-panel-header-icon {
+  font-size: 24px;
+  line-height: 48px;
+  width:32px;
+  float: left;
+  margin-right: 2px;
+  margin-left: 8px;
+  color: rgb(221,221,221);
+}
+
+.mrb-panel-header-title {
+  float: left;
+  font-weight: bold;
+}
+
+.mrb-panel-header .mdl-layout__header-row {
+  height: 48px;
+  padding: 0px;
+}
+
+.mrb-panel-header__actions {
+  height: 48px;
+  float: right;
+  padding-right: 16px;
+}
+
+.mrb-panel .mdl-list {
+  margin-top: 0px;
+  padding-top: 0px;
+}
 
 /* mdl-stepper css styles */
 

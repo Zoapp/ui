@@ -9,10 +9,14 @@ import PropTypes from "prop-types";
 import ContentEditables from "./components/contentEditables";
 import ExpansionPanels from "./components/expansionPanels";
 import Steppers from "./components/steppers";
+import SubToolbars from "./components/subToolbars";
+import Lists from "./components/lists";
 
 const Main = ({ children }) => (
   <main>
     {children}
+    <SubToolbars />
+    <Lists />
     <ContentEditables />
     <ExpansionPanels />
     <Steppers />
@@ -20,8 +24,12 @@ const Main = ({ children }) => (
   </main>
 );
 
+Main.defaultProps = {
+  children: null,
+};
+
 Main.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default Main;

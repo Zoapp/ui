@@ -5,9 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, { Component } from "react";
-import {
-  ContentEditable,
-} from "../../../src/libs";
+import { ContentEditable } from "../../../src/libs";
 
 class CEDemo extends Component {
   constructor(props) {

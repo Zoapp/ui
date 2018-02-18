@@ -10,11 +10,13 @@ import ContentEditables from "./components/contentEditables";
 import ExpansionPanels from "./components/expansionPanels";
 import Steppers from "./components/steppers";
 import SubToolbars from "./components/subToolbars";
+import Lists from "./components/lists";
 
 const Main = ({ children }) => (
   <main>
     {children}
     <SubToolbars />
+    <Lists />
     <ContentEditables />
     <ExpansionPanels />
     <Steppers />

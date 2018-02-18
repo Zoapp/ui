@@ -6,38 +6,32 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
-import { List, ListItem, ListItemContent, Icon } from "zoapp-materialcomponents";
+import { List, ListItem } from "zoapp-materialcomponents";
 
 const ListComponent = ({
   items, selectedItem, onSelect, className, style,
 }) => (
   <List className={className} style={style}>
     {items.map((item, index) => {
-      let icon = null;
-      let content = item.name;
+      const content = item.name;
+      let imgSrc;
+      let icon;
       if (item.icon) {
         let { color } = item;
         if (!color) {
           color = "gray";
         }
-        const st = {
+        /* const st = {
           backgroundColor: color,
           padding: "8px",
-        };
+        }; */
         if (item.icon.endsWith(".svg")) {
-          icon = (
-            <div style={st}>
-              <img style={{ verticalAlign: "top" }} src={item.icon} alt={item.name} />
-            </div>);
+          imgSrc = item.icon;
         } else if (item.icon.endsWith(".png")) {
-          icon = (
-            <div style={st}>
-              <img style={{ verticalAlign: "top", width: "38px", margin: "-7px" }} src={item.icon} alt={item.name} />
-            </div>);
+          imgSrc = item.icon;
         } else {
-          icon = <div style={st}><Icon style={{ verticalAlign: "top" }} name={item.icon} /></div>;
+          ({ icon } = item);
         }
-        content = <ListItemContent avatar={icon} >{content}</ListItemContent>;
       }
       let cn = "selectableListItem";
       if (selectedItem === index) {
@@ -45,6 +39,8 @@ const ListComponent = ({
       }
       return (
         <ListItem
+          imgSrc={imgSrc}
+          icon={icon}
           key={item.id}
           onClick={(e) => { e.preventDefault(); onSelect(index); }}
           className={cn}

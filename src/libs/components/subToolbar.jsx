@@ -30,7 +30,11 @@ const SubToolbar = ({
             return (
               <MenuItem
                 key={key}
-                onClick={(e) => { e.preventDefault(); if (m.onSelect) m.onSelect(m.name); }}
+                onSelected={() => {
+                  if (m.onSelect) {
+                    m.onSelect(m.name);
+                  }
+                }}
               >
                 {m.name}
               </MenuItem>);

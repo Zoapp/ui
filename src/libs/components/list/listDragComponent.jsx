@@ -20,20 +20,9 @@ class ListDragComponent extends Component {
     return (
       <List className={className}>
         {items.map((item, index) => {
+          let cn = "selectableListItem";
           if (selectedItem === index) {
-            return (
-              <ListDragItem
-                index={index}
-                id={item.id}
-                key={item.id}
-                onMove={onMove}
-                onDrop={onDrop}
-                icon={item.icon}
-                onClick={
-                  (e) => { e.preventDefault(); onSelect(index); }}
-                className="selectedListItem"
-              >{item.name}
-              </ListDragItem>);
+            cn = "selectedListItem";
           }
           return (
             <ListDragItem
@@ -44,8 +33,11 @@ class ListDragComponent extends Component {
               onDrop={onDrop}
               icon={item.icon}
               onClick={
-                (e) => { e.preventDefault(); onSelect(index); }}
-              className="selectableListItem"
+                (e) => {
+                  e.preventDefault();
+                  onSelect(index);
+                }}
+              className={cn}
             >{item.name}
             </ListDragItem>);
         })}

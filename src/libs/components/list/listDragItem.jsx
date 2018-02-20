@@ -99,6 +99,7 @@ export default class ListDragItem extends Component {
       imgLabel,
       secondaryText,
       href,
+      onClick,
       ...otherProps
     } = this.props;
     delete otherProps.index;
@@ -139,11 +140,18 @@ export default class ListDragItem extends Component {
     }
     let el;
     if (type === "a") {
-      el = Rmdc.render(<a className={classes} href={href} >{graphic}{text}{meta}</a>, otherProps);
+      el = <a className={classes} href={href} onClick={onClick} >{graphic}{text}{meta}</a>;
     } else {
-      el = Rmdc.render(<li className={classes} >{graphic}{text}{meta}</li>, otherProps);
+      el = (
+        <li
+          role="menuitem"
+          className={classes}
+          onKeyPress={() => {}}
+          onClick={onClick}
+        >{graphic}{text}{meta}
+        </li>);
     }
-    return connectDragSource(connectDropTarget(el));
+    return connectDragSource(connectDropTarget(Rmdc.render(el, otherProps)));
   }
 }
 
@@ -183,5 +191,6 @@ ListDragItem.propTypes = {
   id: PropTypes.string.isRequired,
   onMove: PropTypes.func,
   onDrop: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
 };
 

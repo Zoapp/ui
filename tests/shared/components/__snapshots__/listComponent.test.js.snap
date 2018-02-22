@@ -7,16 +7,25 @@ exports[`ListComponent marks an item as selected 1`] = `
 >
   <li
     className="selectableListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     item 1
   </li>
   <li
     className="selectedListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     item 2
   </li>
   <li
     className="selectableListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     item 3
   </li>
@@ -30,6 +39,9 @@ exports[`ListComponent renders PNG icon 1`] = `
 >
   <li
     className="selectedListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     <img
       alt={null}
@@ -50,6 +62,9 @@ exports[`ListComponent renders SVG icon 1`] = `
 >
   <li
     className="selectedListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     <img
       alt={null}
@@ -77,16 +92,25 @@ exports[`ListComponent renders items 1`] = `
 >
   <li
     className="selectedListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     item 1
   </li>
   <li
     className="selectableListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     item 2
   </li>
   <li
     className="selectableListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     item 3
   </li>
@@ -100,6 +124,9 @@ exports[`ListComponent renders items with icons 1`] = `
 >
   <li
     className="selectedListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
   >
     <i
       aria-hidden="true"

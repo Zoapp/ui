@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Icon } from "zoapp-materialcomponents";
+import { Icon } from "zrmc";
 
 const TableComponent = ({
   title, headers, items, selectedItem, onSelect, className, style,

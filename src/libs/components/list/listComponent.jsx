@@ -6,7 +6,7 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
-import { List, ListItem } from "zoapp-materialcomponents";
+import { List, ListItem } from "zrmc";
 
 const ListComponent = ({
   items, selectedItem, onSelect, className, style,

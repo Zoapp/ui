@@ -7,7 +7,7 @@
 import React, { Component, Children } from "react";
 import PropTypes from "prop-types";
 import { DragSource, DropTarget } from "react-dnd";
-import Rmdc, { Icon } from "zoapp-materialcomponents";
+import Zrmc, { Icon } from "zrmc";
 
 const MDC_LISTITEM = "mdc-list-item";
 
@@ -151,7 +151,7 @@ export default class ListDragItem extends Component {
         >{graphic}{text}{meta}
         </li>);
     }
-    return connectDragSource(connectDropTarget(Rmdc.render(el, otherProps)));
+    return connectDragSource(connectDropTarget(Zrmc.render(el, otherProps)));
   }
 }
 

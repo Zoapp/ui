@@ -6,7 +6,7 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
-import { Icon } from "zoapp-materialcomponents";
+import { Icon } from "zrmc";
 
 // Inspired from https://raw.githubusercontent.com/react-mdl/react-mdl/master/src/List/ListItemContent.js
 const createIcon = (type, icon) => {

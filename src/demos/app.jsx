@@ -5,13 +5,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, { Component } from "react";
-import Rmdc, {
+import Zrmc, {
   Content, Fab, Snackbar,
   Toolbar, ToolbarRow, ToolbarSection, ToolbarTitle, ToolbarIcon,
   Drawer, DrawerContent,
   ListItem,
   Dialog,
-} from "zoapp-materialcomponents";
+} from "zrmc";
 import Main from "./main";
 
 export default class App extends Component {
@@ -23,7 +23,7 @@ export default class App extends Component {
   }
 
   componentWillMount() {
-    Rmdc.init(this, { typography: true });
+    Zrmc.init(this, { typography: true });
   }
 
   onMenuClick = (event) => {
@@ -36,7 +36,7 @@ export default class App extends Component {
       <Dialog header="Are you happy?" actions={[{ name: "Cancel" }, { name: "Continue" }]}>
         <div>Please check the left and right side of this element for fun.</div>
       </Dialog>);
-    Rmdc.showDialog(dialog);
+    Zrmc.showDialog(dialog);
   }
 
   toggleDrawer = () => {

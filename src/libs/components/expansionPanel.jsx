@@ -6,7 +6,7 @@
  */
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Icon } from "zoapp-materialcomponents";
+import { Icon } from "zrmc";
 
 class ExpansionPanel extends Component {
   constructor(props) {

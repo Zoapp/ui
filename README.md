@@ -11,13 +11,17 @@ version](https://badge.fury.io/js/zoapp-ui.svg)](https://badge.fury.io/js/zoapp-
 
 Javascript ES7 UI framework for Zoapp client / frontend apps.
 
+## Goals
+
+Create extra components not available in Zrmc
+
 
 ## Getting started
 
-Add `zoapp-ui` to your `package.json`:
+Add `zrmc` to your `package.json`:
 
 ```
-$ yarn add zoapp-ui
+$ yarn add zrmc
 ```
 
 Profit!

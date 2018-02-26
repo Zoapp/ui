@@ -18,10 +18,10 @@ Create extra components not available in Zrmc
 
 ## Getting started
 
-Add `zrmc` to your `package.json`:
+Add `zoapp-ui` to your `package.json`:
 
 ```
-$ yarn add zrmc
+$ yarn add zoapp-ui
 ```
 
 Profit!

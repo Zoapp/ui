@@ -51,7 +51,7 @@ const SubToolbar = ({
   const iconsRender = () => {
     if (icons) {
       return (
-        <div>
+        <div style={{ paddingTop: "8px" }}>
           {icons.map((icon, index) => {
             const key = `m_${index}`;
             return (

@@ -15,10 +15,10 @@ import ListDragItem from "./listDragItem";
 class ListDragComponent extends Component {
   render() {
     const {
-      items, selectedItem, onSelect, onMove, onDrop, className,
+      items, selectedItem, onSelect, onMove, onDrop, ...otherProps
     } = this.props;
     return (
-      <List className={className}>
+      <List {...otherProps} >
         {items.map((item, index) => {
           let cn = "selectableListItem";
           if (selectedItem === index) {

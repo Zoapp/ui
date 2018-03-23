@@ -7,7 +7,7 @@
 import React from "react";
 import { ExpansionPanel } from "../../../src/libs";
 
-export default () => (
+const ExpansionPanels = () => (
   <section>
     <h1>ExpansionPanel examples </h1>
     <div style={{ padding: "16px" }}>
@@ -20,3 +20,4 @@ export default () => (
     </div>
   </section>
 );
+export default ExpansionPanels;

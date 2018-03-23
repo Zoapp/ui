@@ -7,7 +7,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Tooltip = props => (<div style={{ display: "inline-block" }}>{props.children}</div>);
+const Tooltip = (props) => (
+  <div style={{ display: "inline-block" }}>{props.children}</div>
+);
 
 Tooltip.propTypes = {
   children: PropTypes.node.isRequired,

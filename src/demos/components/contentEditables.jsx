@@ -15,7 +15,9 @@ class CEDemo extends Component {
     const selectedItem = items.length - 1;
     const caretPosition = 0;
     this.state = {
-      items, selectedItem, caretPosition,
+      items,
+      selectedItem,
+      caretPosition,
     };
   }
 
@@ -25,7 +27,7 @@ class CEDemo extends Component {
     if (this.state.selectedItem !== selectedItem) {
       this.setState(() => ({ selectedItem }));
     }
-  }
+  };
 
   parse(content) {
     // TODO
@@ -43,7 +45,7 @@ class CEDemo extends Component {
     const content = this.buildFromHtml([...element.children]);
     const items = this.parse(content);
     this.setState(() => ({ items }));
-  }
+  };
 
   renderItems(items, selectedItem) {
     // TODO
@@ -78,7 +80,8 @@ class CEDemo extends Component {
             caretPosition={this.state.caretPosition}
           />
         </div>
-      </section>);
+      </section>
+    );
   }
 }
 export default CEDemo;

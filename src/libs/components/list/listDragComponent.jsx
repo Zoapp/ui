@@ -15,10 +15,15 @@ import ListDragItem from "./listDragItem";
 class ListDragComponent extends Component {
   render() {
     const {
-      items, selectedItem, onSelect, onMove, onDrop, ...otherProps
+      items,
+      selectedItem,
+      onSelect,
+      onMove,
+      onDrop,
+      ...otherProps
     } = this.props;
     return (
-      <List {...otherProps} >
+      <List {...otherProps}>
         {items.map((item, index) => {
           let cn = "selectableListItem";
           if (selectedItem === index) {
@@ -32,14 +37,15 @@ class ListDragComponent extends Component {
               onMove={onMove}
               onDrop={onDrop}
               icon={item.icon}
-              onClick={
-                (e) => {
-                  e.preventDefault();
-                  onSelect(index);
-                }}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelect(index);
+              }}
               className={cn}
-            >{item.name}
-            </ListDragItem>);
+            >
+              {item.name}
+            </ListDragItem>
+          );
         })}
       </List>
     );

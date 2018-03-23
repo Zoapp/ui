@@ -35,7 +35,7 @@ const itemTarget = {
     const hoverIndex = props.index;
 
     // Don't replace items with themselves
-    if (dragIndex === hoverIndex || (!component) || (!component.ref)) {
+    if (dragIndex === hoverIndex || !component || !component.ref) {
       return;
     }
 
@@ -78,7 +78,7 @@ const itemTarget = {
   },
 };
 
-@DropTarget("item", itemTarget, connect => ({
+@DropTarget("item", itemTarget, (connect) => ({
   connectDropTarget: connect.dropTarget(),
 }))
 @DragSource("item", itemSource, (connect, monitor) => ({
@@ -113,7 +113,13 @@ export default class ListDragItem extends Component {
       classes += " mdc-list-item--activated";
     }
     if (icon) {
-      graphic = (<Icon className="mdc-list-item__graphic" aria-hidden="true" name={icon} />);
+      graphic = (
+        <Icon
+          className="mdc-list-item__graphic"
+          aria-hidden="true"
+          name={icon}
+        />
+      );
     } else if (imgSrc) {
       graphic = (
         <img
@@ -122,7 +128,8 @@ export default class ListDragItem extends Component {
           width={imgSize}
           height={imgSize}
           alt={imgLabel}
-        />);
+        />
+      );
     }
     let meta;
     let text = Children.map(children, (child) => {
@@ -134,13 +141,21 @@ export default class ListDragItem extends Component {
     });
     if (secondaryText) {
       text = (
-        <span className="mdc-list-item__text">{text}
+        <span className="mdc-list-item__text">
+          {text}
           <span className="mdc-list-item__secondary-text">{secondaryText}</span>
-        </span>);
+        </span>
+      );
     }
     let el;
     if (type === "a") {
-      el = <a className={classes} href={href} onClick={onClick} >{graphic}{text}{meta}</a>;
+      el = (
+        <a className={classes} href={href} onClick={onClick}>
+          {graphic}
+          {text}
+          {meta}
+        </a>
+      );
     } else {
       el = (
         <li
@@ -148,8 +163,12 @@ export default class ListDragItem extends Component {
           className={classes}
           onKeyPress={() => {}}
           onClick={onClick}
-        >{graphic}{text}{meta}
-        </li>);
+        >
+          {graphic}
+          {text}
+          {meta}
+        </li>
+      );
     }
     return connectDragSource(connectDropTarget(Zrmc.render(el, otherProps)));
   }
@@ -193,4 +212,3 @@ ListDragItem.propTypes = {
   onDrop: PropTypes.func,
   onClick: PropTypes.func.isRequired,
 };
-

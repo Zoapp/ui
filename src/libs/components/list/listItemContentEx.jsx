@@ -20,12 +20,19 @@ const createIcon = (type, icon) => {
 
 const ListItemContentEx = (props) => {
   const {
-    avatar, children, className, icon,
-    subtitle, useBodyClass, ...otherProps
+    avatar,
+    children,
+    className,
+    icon,
+    subtitle,
+    useBodyClass,
+    ...otherProps
   } = props;
 
   const classes = `mdl-list__item-primary-content ${className}`;
-  const subtitleClassName = useBodyClass ? "mdl-list__item-text-body" : "mdl-list__item-sub-title";
+  const subtitleClassName = useBodyClass
+    ? "mdl-list__item-text-body"
+    : "mdl-list__item-sub-title";
 
   let iconElement = null;
   if (icon) {
@@ -53,16 +60,10 @@ ListItemContentEx.defaultProps = {
 };
 
 ListItemContentEx.propTypes = {
-  avatar: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  avatar: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   children: PropTypes.node,
   className: PropTypes.string,
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.element,
-  ]),
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   subtitle: PropTypes.node,
   useBodyClass: PropTypes.bool,
 };

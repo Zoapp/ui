@@ -8,9 +8,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { List, ListItem } from "zrmc";
 
-const ListComponent = ({
-  items, selectedItem, onSelect, className, style,
-}) => (
+const ListComponent = ({ items, selectedItem, onSelect, className, style }) => (
   <List className={className} style={style}>
     {items.map((item, index) => {
       const content = item.name;
@@ -42,10 +40,15 @@ const ListComponent = ({
           imgSrc={imgSrc}
           icon={icon}
           key={item.id}
-          onClick={(e) => { e.preventDefault(); onSelect(index); }}
+          onClick={(e) => {
+            e.preventDefault();
+            onSelect(index);
+          }}
           className={cn}
-        >{content}
-        </ListItem>);
+        >
+          {content}
+        </ListItem>
+      );
     })}
   </List>
 );
@@ -56,11 +59,13 @@ ListComponent.defaultProps = {
 };
 
 ListComponent.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    icon: PropTypes.string,
-  })).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      icon: PropTypes.string,
+    }),
+  ).isRequired,
   selectedItem: PropTypes.number.isRequired,
   onSelect: PropTypes.func.isRequired,
   className: PropTypes.string,

@@ -13,16 +13,24 @@ class StepperDemo extends Component {
     this.state = {
       steps: [
         {
-          id: "1", title: "Create App", editable: true, active: true,
+          id: "1",
+          title: "Create App",
+          editable: true,
+          active: true,
         },
         {
-          id: "2", title: "Connect App",
+          id: "2",
+          title: "Connect App",
         },
         {
-          id: "3", title: "Interactions", optional: true,
+          id: "3",
+          title: "Interactions",
+          optional: true,
         },
         {
-          id: "4", title: "Publish", optional: true,
+          id: "4",
+          title: "Publish",
+          optional: true,
         },
       ],
     };
@@ -63,7 +71,9 @@ class StepperDemo extends Component {
         <div style={{ padding: "16px" }}>
           <Stepper
             steps={this.state.steps}
-            onSelect={(index) => { this.setSelectedStep(index, true); }}
+            onSelect={(index) => {
+              this.setSelectedStep(index, true);
+            }}
           />
           <div style={style} />
         </div>
@@ -73,4 +83,3 @@ class StepperDemo extends Component {
 }
 
 export default StepperDemo;
-

@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 import { Icon } from "zrmc";
 
 const TableComponent = ({
-  title, headers, items, selectedItem, onSelect, className, style,
+  title,
+  headers,
+  items,
+  selectedItem,
+  onSelect,
+  className,
+  style,
 }) => {
   const s = style || {};
   if (!s.width) {
@@ -12,7 +18,8 @@ const TableComponent = ({
   s.borderSpacing = "0";
   return (
     <div>
-      <div style={{ minHeight: "400px" }}>{title}
+      <div style={{ minHeight: "400px" }}>
+        {title}
         <table className={className} style={s}>
           <thead>
             <tr
@@ -32,7 +39,10 @@ const TableComponent = ({
                 };
                 const key = `h_${index}`;
                 return (
-                  <th key={key} style={st}>{h}</th>);
+                  <th key={key} style={st}>
+                    {h}
+                  </th>
+                );
               })}
             </tr>
           </thead>
@@ -52,14 +62,24 @@ const TableComponent = ({
                   icon = (
                     <div style={stl}>
                       <img style={{}} src={item.icon} alt={item.name} />
-                    </div>);
+                    </div>
+                  );
                 } else if (item.icon.endsWith(".png")) {
                   icon = (
                     <div style={style}>
-                      <img style={{ width: "40px" }} src={item.icon} alt={item.name} />
-                    </div>);
+                      <img
+                        style={{ width: "40px" }}
+                        src={item.icon}
+                        alt={item.name}
+                      />
+                    </div>
+                  );
                 } else {
-                  icon = <div style={style}><Icon style={{}} name={item.icon} /></div>;
+                  icon = (
+                    <div style={style}>
+                      <Icon style={{}} name={item.icon} />
+                    </div>
+                  );
                 }
               }
               const { values } = item;
@@ -76,24 +96,44 @@ const TableComponent = ({
               return (
                 <tr
                   key={item.id}
-                  onClick={(e) => { e.preventDefault(); onSelect(index); }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelect(index);
+                  }}
                   className={cn}
                   style={{ color: "rgba(0, 0, 0, 0.87)", fontSize: "13px" }}
                 >
-                  <td style={{
-                    width: "48px", verticalAlign: "middle", height: "48px", borderTop: "1px solid rgba(0, 0, 0, 0.12)",
-                  }}
-                  >{icon}
-                  </td>{values.map((value, i) => {
+                  <td
+                    style={{
+                      width: "48px",
+                      verticalAlign: "middle",
+                      height: "48px",
+                      borderTop: "1px solid rgba(0, 0, 0, 0.12)",
+                    }}
+                  >
+                    {icon}
+                  </td>
+                  {values.map((value, i) => {
                     const k = `c_${i}`;
-                    return (<td key={k} style={st}>{value}</td>);
+                    return (
+                      <td key={k} style={st}>
+                        {value}
+                      </td>
+                    );
                   })}
-                </tr>);
+                </tr>
+              );
             })}
           </tbody>
         </table>
       </div>
-      <div style={{ width: "100%", height: "56px", borderTop: "1px solid rgba(0, 0, 0, 0.12)" }} />
+      <div
+        style={{
+          width: "100%",
+          height: "56px",
+          borderTop: "1px solid rgba(0, 0, 0, 0.12)",
+        }}
+      />
     </div>
   );
 };
@@ -104,8 +144,7 @@ TableComponent.defaultProps = {
 };
 
 TableComponent.propTypes = {
-  title: PropTypes.oneOfType([
-    PropTypes.string, PropTypes.element]).isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   className: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
   headers: PropTypes.arrayOf(PropTypes.string).isRequired,

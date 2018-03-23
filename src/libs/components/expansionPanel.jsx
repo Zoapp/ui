@@ -18,7 +18,7 @@ class ExpansionPanel extends Component {
   onSwitch = () => {
     const collapsed = !this.state.collapsed;
     this.setState({ collapsed });
-  }
+  };
 
   render() {
     const { label, disabled, children } = this.props;
@@ -37,12 +37,14 @@ class ExpansionPanel extends Component {
             name={icon}
             className="mrb-subheader-right"
             disabled={disabled}
-            onClick={(e) => { e.preventDefault(); this.onSwitch(); }}
-          /><div>{label}</div>
+            onClick={(e) => {
+              e.preventDefault();
+              this.onSwitch();
+            }}
+          />
+          <div>{label}</div>
         </div>
-        <div style={style} >
-          {children}
-        </div>
+        <div style={style}>{children}</div>
       </div>
     );
   }

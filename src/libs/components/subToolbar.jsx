@@ -9,12 +9,7 @@ import PropTypes from "prop-types";
 import { Icon, Menu, MenuItem } from "zrmc";
 import HeaderIcon from "./headerIcon";
 
-const SubToolbar = ({
-  titleIcon,
-  titleName,
-  icons,
-  menu,
-}) => {
+const SubToolbar = ({ titleIcon, titleName, icons, menu }) => {
   const menuRender = () => {
     if (menu) {
       const id = `${titleName}-menu`;
@@ -25,7 +20,11 @@ const SubToolbar = ({
           {items.map((m, index) => {
             const key = `m_${index}`;
             if (m.disabled) {
-              return (<MenuItem key={key} disabled>{m.name}</MenuItem>);
+              return (
+                <MenuItem key={key} disabled>
+                  {m.name}
+                </MenuItem>
+              );
             }
             return (
               <MenuItem
@@ -37,21 +36,29 @@ const SubToolbar = ({
                 }}
               >
                 {m.name}
-              </MenuItem>);
+              </MenuItem>
+            );
           })}
-        </Menu>);
+        </Menu>
+      );
       return (
         <div>
-          <Icon name="more_vert" id={id} className="mrb-subheader-menu" menu={me} />
-        </div>);
+          <Icon
+            name="more_vert"
+            id={id}
+            className="mrb-subheader-menu"
+            menu={me}
+          />
+        </div>
+      );
     }
-    return (<div />);
+    return <div />;
   };
 
   const iconsRender = () => {
     if (icons) {
       return (
-        <div>
+        <div style={{ paddingTop: "6px" }}>
           {icons.map((icon, index) => {
             const key = `m_${index}`;
             return (
@@ -59,14 +66,16 @@ const SubToolbar = ({
                 key={key}
                 name={icon.name}
                 onClick={(e) => {
-                  e.preventDefault(); if (icon.onClick) icon.onClick();
+                  e.preventDefault();
+                  if (icon.onClick) icon.onClick();
                 }}
               />
             );
           })}
-        </div>);
+        </div>
+      );
     }
-    return (<div />);
+    return <div />;
   };
   let headerIcon = null;
   let style = {};
@@ -78,7 +87,9 @@ const SubToolbar = ({
   return (
     <div className="mrb-panel-header">
       {headerIcon}
-      <div style={style} className="mrb-panel-header-title">{titleName}</div>
+      <div style={style} className="mrb-panel-header-title">
+        {titleName}
+      </div>
       <div className="mrb-panel-header__actions">
         {iconsRender()}
         {menuRender()}
@@ -93,8 +104,8 @@ SubToolbar.defaultProps = {
 };
 
 SubToolbar.propTypes = {
-  titleName: PropTypes.oneOfType([
-    PropTypes.string, PropTypes.element]).isRequired,
+  titleName: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+    .isRequired,
   titleIcon: PropTypes.string,
   icons: PropTypes.arrayOf(PropTypes.shape({})),
   menu: PropTypes.shape({

@@ -10,7 +10,7 @@
     "compile": "yarn compile:css && babel src/libs -d dist && cp -f ./package.json ./dist/package.json && cp -f ./LICENSE ./dist/LICENSE && cp -f ./README.md ./dist/README.md",
     "compile:css": "yarn clean-dist && cleancss -o dist/compressed.css src/libs/css/app.css",
     "dev": "yarn compile:dev && yarn start:dev",
-    "lint": "eslint src/libs --ext=js --ext=jsx && eslint src/demos --ext=js --ext=jsx",
+    "lint": "eslint src/libs src/demos tests --ext=js --ext=jsx",
     "test": "jest",
     "compile:dev": "yarn compile:css && webpack --env=dev --progress --profile --colors",
     "start:dev": "webpack-dev-server --env=dev --inline",
@@ -65,14 +65,18 @@
     "css-loader": "0.28.9",
     "eslint": "^4.15.0",
     "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-import-resolver-babel-module": "4.0.0",
     "eslint-import-resolver-webpack": "0.8.4",
     "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jest": "^21.13.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.5.1",
     "file-loader": "1.1.6",
     "jest": "^22.2.2",
     "nodemon": "^1.14.11",
+    "prettier": "^1.11.1",
     "react-test-renderer": "^16.2.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.0",
@@ -80,8 +84,9 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "@demos/(.*)": "<rootDir>/src/demos/$1",
-      "@libs/(.*)": "<rootDir>/src/libs/$1"
+      "demos/(.*)": "<rootDir>/src/demos/$1",
+      "libs/(.*)": "<rootDir>/src/libs/$1",
+      "tests/(.*)": "<rootDir>/tests/$1"
     }
   }
 }

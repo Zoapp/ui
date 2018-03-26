@@ -7,7 +7,7 @@
 import React from "react";
 import { SubToolbar } from "../../../src/libs";
 
-export default () => (
+const SubToolbars = () => (
   <section>
     <h1>SubToolbar examples </h1>
     <div style={{ padding: "16px" }}>
@@ -15,10 +15,11 @@ export default () => (
         titleName="Title"
         menu={{
           items: [
-            { name: "Add", onSelect: () => { } },
-            { name: "Rename", onSelect: () => { } },
-            { name: "Delete", onSelect: () => { } },
-            { name: "Export", onSelect: () => { } }],
+            { name: "Add", onSelect: () => {} },
+            { name: "Rename", onSelect: () => {} },
+            { name: "Delete", onSelect: () => {} },
+            { name: "Export", onSelect: () => {} },
+          ],
         }}
       />
     </div>
@@ -26,7 +27,7 @@ export default () => (
       <SubToolbar
         titleIcon="question_answer"
         titleName="Title"
-        icons={[{ name: "file_upload", onClick: () => { } }]}
+        icons={[{ name: "file_upload", onClick: () => {} }]}
       />
     </div>
     <div style={{ padding: "16px" }}>
@@ -35,13 +36,13 @@ export default () => (
         titleName="Title"
         menu={{
           items: [
-            { name: "Context", onSelect: () => { } },
+            { name: "Context", onSelect: () => {} },
             { name: "Load", disabled: true },
             { name: "Save", disabled: true },
-            { name: "Reset", onSelect: () => { } },
-            { name: "Demo", onSelect: () => { } },
-            { name: "Share", onSelect: () => { } },
-            { name: "Settings", onSelect: () => { } },
+            { name: "Reset", onSelect: () => {} },
+            { name: "Demo", onSelect: () => {} },
+            { name: "Share", onSelect: () => {} },
+            { name: "Settings", onSelect: () => {} },
           ],
           align: "right",
         }}
@@ -49,3 +50,4 @@ export default () => (
     </div>
   </section>
 );
+export default SubToolbars;

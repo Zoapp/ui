@@ -19,13 +19,17 @@ const Stepper = (props) => {
         cn += step.editable ? " editable-step" : "";
         const { id } = step;
         const i = index + 1;
-        const optional = step.optional ? <div className="mdl-stepper-optional">Optional</div> : "";
+        const optional = step.optional ? (
+          <div className="mdl-stepper-optional">Optional</div>
+        ) : (
+          ""
+        );
         return (
           <div
             className={cn}
             key={id}
             role="presentation"
-            onKeyDown={() => { }}
+            onKeyDown={() => {}}
             onClick={(event) => {
               event.stopPropagation();
               if (step.active && this.props.onSelect) {
@@ -33,14 +37,18 @@ const Stepper = (props) => {
               }
             }}
           >
-            <div className="mdl-stepper-circle"><span>{i}</span></div>
+            <div className="mdl-stepper-circle">
+              <span>{i}</span>
+            </div>
             <div className="mdl-stepper-title">{step.title}</div>
             {optional}
             <div className="mdl-stepper-bar-left" />
             <div className="mdl-stepper-bar-right" />
-          </div>);
+          </div>
+        );
       })}
-    </div>);
+    </div>
+  );
 };
 
 Stepper.propTypes = {

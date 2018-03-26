@@ -6,9 +6,16 @@
  */
 import React, { Component } from "react";
 import Zrmc, {
-  Content, Fab, Snackbar,
-  Toolbar, ToolbarRow, ToolbarSection, ToolbarTitle, ToolbarIcon,
-  Drawer, DrawerContent,
+  Content,
+  Fab,
+  Snackbar,
+  Toolbar,
+  ToolbarRow,
+  ToolbarSection,
+  ToolbarTitle,
+  ToolbarIcon,
+  Drawer,
+  DrawerContent,
   ListItem,
   Dialog,
 } from "zrmc";
@@ -18,7 +25,9 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      drawer: "persistent", drawerOpen: false, aboveToolbar: false,
+      drawer: "persistent",
+      drawerOpen: false,
+      aboveToolbar: false,
     };
   }
 
@@ -29,20 +38,24 @@ export default class App extends Component {
   onMenuClick = (event) => {
     event.preventDefault();
     this.toggleDrawer();
-  }
+  };
 
   handleDialog = () => {
     const dialog = (
-      <Dialog header="Are you happy?" actions={[{ name: "Cancel" }, { name: "Continue" }]}>
+      <Dialog
+        header="Are you happy?"
+        actions={[{ name: "Cancel" }, { name: "Continue" }]}
+      >
         <div>Please check the left and right side of this element for fun.</div>
-      </Dialog>);
+      </Dialog>
+    );
     Zrmc.showDialog(dialog);
-  }
+  };
 
   toggleDrawer = () => {
     const open = !this.state.drawerOpen;
     this.setState({ drawerOpen: open });
-  }
+  };
 
   render() {
     let icon;
@@ -53,11 +66,11 @@ export default class App extends Component {
       <Content>
         <Toolbar fixed>
           <ToolbarRow>
-            <ToolbarSection align="start" >
+            <ToolbarSection align="start">
               {icon}
               <ToolbarTitle>ZUI Components</ToolbarTitle>
             </ToolbarSection>
-            <ToolbarSection align="end" shrinkToFit >
+            <ToolbarSection align="end" shrinkToFit>
               <ToolbarIcon name="search" />
             </ToolbarSection>
           </ToolbarRow>
@@ -69,7 +82,9 @@ export default class App extends Component {
           onClose={this.toggleDrawer}
         >
           <DrawerContent list>
-            <ListItem icon="inbox" activated>Demo</ListItem>
+            <ListItem icon="inbox" activated>
+              Demo
+            </ListItem>
           </DrawerContent>
         </Drawer>
         <Content>

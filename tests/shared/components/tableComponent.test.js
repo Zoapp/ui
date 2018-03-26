@@ -1,18 +1,16 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import TableComponent from '@libs/components/tableComponent';
+import React from "react";
+import renderer from "react-test-renderer";
+import TableComponent from "libs/components/tableComponent";
 
-describe('TableComponent', () => {
-  const newItem = ({ id, name, values = [], icon = null }) => {
-    return {
-      id: id || name,
-      name,
-      values,
-      icon,
-    };
-  };
+describe("TableComponent", () => {
+  const newItem = ({ id, name, values = [], icon = null }) => ({
+    id: id || name,
+    name,
+    values,
+    icon,
+  });
 
-  it('renders correctly', () => {
+  it("renders correctly", () => {
     const headers = [];
     const items = [];
 
@@ -23,18 +21,16 @@ describe('TableComponent', () => {
         title="some title"
         onSelect={jest.fn()}
         selectedItem={0}
-      />
+      />,
     );
 
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders items', () => {
-    const headers = ['header 1'];
-    const items = [
-      newItem({ name: 'item 1' }),
-    ];
+  it("renders items", () => {
+    const headers = ["header 1"];
+    const items = [newItem({ name: "item 1" })];
 
     const component = renderer.create(
       <TableComponent
@@ -43,18 +39,16 @@ describe('TableComponent', () => {
         title="some title"
         onSelect={jest.fn()}
         selectedItem={0}
-      />
+      />,
     );
 
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders items with numerical ids', () => {
-    const headers = ['header 1'];
-    const items = [
-      newItem({ id: 123, name: 'item 1' }),
-    ];
+  it("renders items with numerical ids", () => {
+    const headers = ["header 1"];
+    const items = [newItem({ id: 123, name: "item 1" })];
 
     const component = renderer.create(
       <TableComponent
@@ -63,10 +57,10 @@ describe('TableComponent', () => {
         title="some title"
         onSelect={jest.fn()}
         selectedItem={0}
-      />
+      />,
     );
 
-    let tree = component.toJSON();
+    const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

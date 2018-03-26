@@ -18,7 +18,9 @@ class ContentEditable extends Component {
 
   componentDidMount() {
     // this.updateFocus();
-    window.setTimeout(() => { this.updateFocus(); }, 100);
+    window.setTimeout(() => {
+      this.updateFocus();
+    }, 100);
   }
 
   shouldComponentUpdate(nextProps) {
@@ -36,7 +38,9 @@ class ContentEditable extends Component {
 
   componentDidUpdate() {
     // this.updateFocus();
-    window.setTimeout(() => { this.updateFocus(); }, 100);
+    window.setTimeout(() => {
+      this.updateFocus();
+    }, 100);
   }
 
   onFocus = (e) => {
@@ -49,34 +53,34 @@ class ContentEditable extends Component {
       // e.preventDefault();
     }
     // console.log("onFocus ", e.target);
-  }
+  };
 
   onMouseUp = (e) => {
     const element = e.target;
     if (element.tabIndex !== 0) {
-      /* const caretPosition = */this.updateCaretPosition(element);
+      /* const caretPosition = */ this.updateCaretPosition(element);
       // console.log("onMouseUp ", caretPosition);
     }
-  }
+  };
 
   onKeyPress = (e) => {
     switch (e.which) {
-    case 38:
-      this.navigate(e, "ArrowUp");
-      break;
-    case 40:
-      this.navigate(e, "ArrowDown");
-      break;
-    case 37:
-      this.navigate(e, "ArrowLeft");
-      break;
-    case 39:
-      this.navigate(e, "ArrowRight");
-      break;
-    default:
-      break;
+      case 38:
+        this.navigate(e, "ArrowUp");
+        break;
+      case 40:
+        this.navigate(e, "ArrowDown");
+        break;
+      case 37:
+        this.navigate(e, "ArrowLeft");
+        break;
+      case 39:
+        this.navigate(e, "ArrowRight");
+        break;
+      default:
+        break;
     }
-  }
+  };
 
   onInput = (event) => {
     const element = this.node; // ReactDOM.findDOMNode(this);
@@ -84,7 +88,7 @@ class ContentEditable extends Component {
     const e = event.target;
     const caretPosition = this.updateCaretPosition(e);
     this.props.onChange(text, element, { element: e, caretPosition });
-  }
+  };
 
   getCaretPosition() {
     const range = window.getSelection().getRangeAt(0);
@@ -184,7 +188,9 @@ class ContentEditable extends Component {
       onTouchEnd: this.onMouseUp,
       onKeyUp: this.onKeyPress,
       onInput: this.onInput,
-      ref: (node) => { this.node = node; },
+      ref: (node) => {
+        this.node = node;
+      },
     });
   }
 }

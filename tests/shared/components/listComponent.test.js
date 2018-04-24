@@ -45,6 +45,26 @@ describe("ListComponent", () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it("renders items with a number id", () => {
+    const items = [
+      newItem({ id: 1, name: "item 1" }),
+      newItem({ id: 2, name: "item 2" }),
+      newItem({ id: 3, name: "item 3" }),
+    ];
+    const component = renderer.create(
+      <ListComponent
+        items={items}
+        selectedItem={0}
+        onSelect={jest.fn()}
+        className="some-class"
+        style={{}}
+      />,
+    );
+
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
   it("renders items with icons", () => {
     const items = [newItem({ name: "item 1", icon: "some-icon" })];
     const component = renderer.create(

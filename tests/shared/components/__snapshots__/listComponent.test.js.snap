@@ -117,6 +117,38 @@ exports[`ListComponent renders items 1`] = `
 </ul>
 `;
 
+exports[`ListComponent renders items with a number id 1`] = `
+<ul
+  className="some-class mdc-list"
+  style={Object {}}
+>
+  <li
+    className="selectedListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
+  >
+    item 1
+  </li>
+  <li
+    className="selectableListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
+  >
+    item 2
+  </li>
+  <li
+    className="selectableListItem mdc-list-item"
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="menuitem"
+  >
+    item 3
+  </li>
+</ul>
+`;
+
 exports[`ListComponent renders items with icons 1`] = `
 <ul
   className="some-class mdc-list"

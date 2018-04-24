@@ -61,7 +61,7 @@ ListComponent.defaultProps = {
 ListComponent.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       name: PropTypes.string,
       icon: PropTypes.string,
     }),

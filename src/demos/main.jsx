@@ -11,6 +11,7 @@ import ExpansionPanels from "./components/expansionPanels";
 import Steppers from "./components/steppers";
 import SubToolbars from "./components/subToolbars";
 import Lists from "./components/lists";
+import FileInputs from "./components/fileInputs";
 
 const Main = ({ children }) => (
   <main>
@@ -20,6 +21,7 @@ const Main = ({ children }) => (
     <ContentEditables />
     <ExpansionPanels />
     <Steppers />
+    <FileInputs />
     <section style={{ height: "200px" }} />
   </main>
 );

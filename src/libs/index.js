@@ -16,6 +16,7 @@ import ContentEditable from "./components/contentEditable";
 import ExpansionPanel from "./components/expansionPanel";
 import TableComponent from "./components/tableComponent";
 import Tooltip from "./components/tooltip";
+import FileInput from "./components/fileInput";
 
 export {
   Stepper,
@@ -30,4 +31,5 @@ export {
   SubToolbar,
   TableComponent,
   Tooltip,
+  FileInput,
 };

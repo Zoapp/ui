@@ -62,14 +62,12 @@ class FileInputs extends Component {
 
         <div style={{ padding: "16px" }}>
           <FileInput
-            accept="*/*"
             style={{ background: "#018786", color: "white", margin: "10px" }}
             onChange={(e) => this.handleFiles(e.target.files, "fromIconFiles")}
             icon="file_upload"
           />
 
           <FileInput
-            accept="*/*"
             raised
             disabled
             style={{ margin: "10px" }}

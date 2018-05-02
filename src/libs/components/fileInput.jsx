@@ -44,9 +44,13 @@ const FileInput = ({
   );
 };
 
+FileInput.defaultProps = {
+  accept: "*/*",
+};
+
 FileInput.propTypes = {
-  accept: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  accept: PropTypes.string,
   children: PropTypes.node,
   classNames: PropTypes.string,
   multiple: PropTypes.bool,

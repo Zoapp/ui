@@ -8,22 +8,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "zrmc";
 
-const FileInput = ({
-  accept,
-  onChange,
-  children,
-  classNames,
-  multiple,
-  ...props
-}) => {
-  const classes = `mdl-button--file ${classNames}`;
+const FileInput = ({ accept, onChange, children, multiple, ...props }) => {
   let fileInputRef;
 
   return (
     <div style={{ display: "inline-block" }}>
       <Button
         {...props}
-        classNames={{ classes }}
         onClick={() => {
           fileInputRef.click();
         }}
@@ -52,7 +43,6 @@ FileInput.propTypes = {
   onChange: PropTypes.func.isRequired,
   accept: PropTypes.string,
   children: PropTypes.node,
-  classNames: PropTypes.string,
   multiple: PropTypes.bool,
 };
 

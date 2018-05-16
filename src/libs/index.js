@@ -17,6 +17,7 @@ import ExpansionPanel from "./components/expansionPanel";
 import TableComponent from "./components/tableComponent";
 import Tooltip from "./components/tooltip";
 import FileInput from "./components/fileInput";
+import DrawerFooter from "./components/drawerFooter";
 
 export {
   Stepper,
@@ -32,4 +33,5 @@ export {
   TableComponent,
   Tooltip,
   FileInput,
+  DrawerFooter,
 };

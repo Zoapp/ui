@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FileInput renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "inline-block",
+    }
+  }
+>
+  <button
+    className="mdc-button"
+    disabled={false}
+    id={null}
+    onClick={[Function]}
+    type="button"
+  >
+    
+  </button>
+  <input
+    accept="*/*"
+    multiple={undefined}
+    onChange={[MockFunction]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    type="file"
+  />
+</div>
+`;
+
+exports[`FileInput should allow to select multiple files 1`] = `
+<div
+  style={
+    Object {
+      "display": "inline-block",
+    }
+  }
+>
+  <button
+    className="mdc-button"
+    disabled={false}
+    id={null}
+    onClick={[Function]}
+    type="button"
+  >
+    
+    Upload files
+  </button>
+  <input
+    accept="*/*"
+    multiple={true}
+    onChange={[MockFunction]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    type="file"
+  />
+</div>
+`;
+
+exports[`FileInput should define accepted files 1`] = `
+<div
+  style={
+    Object {
+      "display": "inline-block",
+    }
+  }
+>
+  <button
+    className="mdc-button"
+    disabled={false}
+    id={null}
+    onClick={[Function]}
+    type="button"
+  >
+    
+    Upload files
+  </button>
+  <input
+    accept="audio/mp3"
+    multiple={undefined}
+    onChange={[MockFunction]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    type="file"
+  />
+</div>
+`;
+
+exports[`FileInput should render children 1`] = `
+<div
+  style={
+    Object {
+      "display": "inline-block",
+    }
+  }
+>
+  <button
+    className="mdc-button"
+    disabled={false}
+    id={null}
+    onClick={[Function]}
+    type="button"
+  >
+    
+    Upload files
+  </button>
+  <input
+    accept="*/*"
+    multiple={undefined}
+    onChange={[MockFunction]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    type="file"
+  />
+</div>
+`;

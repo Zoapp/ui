@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerFooter should render 1`] = `
+<footer
+  className="mdc-drawer__footer"
+>
+  <div
+    className="mdc-drawer__footer-content"
+  >
+    test
+  </div>
+</footer>
+`;

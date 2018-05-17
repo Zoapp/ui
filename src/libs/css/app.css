@@ -71,7 +71,7 @@
 }
 
 .mrb-panel-empty {
-  background: linear-gradient(to bottom, 
+  background: linear-gradient(to bottom,
   rgba(255, 255, 255, 0.95) 0%,
   rgba(255, 255, 255, 0.85) 70%,
   rgba(255, 255, 255, 0.75) 100%);
@@ -260,4 +260,10 @@
   left: 0;
   right: 50%;
   margin-right: 20px;
+}
+
+.mdc-drawer__footer {
+  position: relative;
+  margin-top: auto;
+  padding: 4px 16px;
 }

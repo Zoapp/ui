@@ -111,8 +111,9 @@
 }
 
 .mrb-panel-header__actions {
-  height: 36px;
+  height: 24px;
   float: right;
+  padding-top: 6px;
   padding-right: 16px;
 }
 

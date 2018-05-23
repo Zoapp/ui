@@ -91,11 +91,12 @@
 
 .mrb-panel-header-icon {
   font-size: 24px;
-  line-height: 48px;
-  width:32px;
+  line-height: 36px;
+  width:36px;
   float: left;
   margin-right: 2px;
   margin-left: 8px;
+  margin-top: 6px;
   color: rgb(221,221,221);
 }
 
@@ -105,12 +106,12 @@
 }
 
 .mrb-panel-header .mdl-layout__header-row {
-  height: 48px;
+  height: 36px;
   padding: 0px;
 }
 
 .mrb-panel-header__actions {
-  height: 48px;
+  height: 36px;
   float: right;
   padding-right: 16px;
 }

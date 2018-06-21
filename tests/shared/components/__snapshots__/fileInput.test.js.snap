@@ -10,7 +10,10 @@ exports[`FileInput renders correctly 1`] = `
 >
   <button
     className="mdc-button"
+    disabled={false}
+    id={null}
     onClick={[Function]}
+    type="button"
   >
     
   </button>
@@ -38,7 +41,10 @@ exports[`FileInput should allow to select multiple files 1`] = `
 >
   <button
     className="mdc-button"
+    disabled={false}
+    id={null}
     onClick={[Function]}
+    type="button"
   >
     
     Upload files
@@ -67,7 +73,10 @@ exports[`FileInput should define accepted files 1`] = `
 >
   <button
     className="mdc-button"
+    disabled={false}
+    id={null}
     onClick={[Function]}
+    type="button"
   >
     
     Upload files
@@ -96,7 +105,10 @@ exports[`FileInput should render children 1`] = `
 >
   <button
     className="mdc-button"
+    disabled={false}
+    id={null}
     onClick={[Function]}
+    type="button"
   >
     
     Upload files

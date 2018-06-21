@@ -11,10 +11,10 @@ const ExpansionPanels = () => (
   <section>
     <h1>ExpansionPanel examples </h1>
     <div style={{ padding: "16px" }}>
-      <ExpansionPanel label="name 1">
+      <ExpansionPanel label="name 1" description="description">
         <div style={{ width: "600px", height: "300px" }} />
       </ExpansionPanel>
-      <ExpansionPanel label="name 2">
+      <ExpansionPanel label="name 2" collapsed description="description">
         <div style={{ width: "600px", height: "300px" }} />
       </ExpansionPanel>
     </div>

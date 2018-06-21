@@ -9,6 +9,15 @@
   outline: 0px solid transparent;
 }
 
+ 
+.mdl-color--grey-100 {
+  background: #F2F2F2;
+}
+
+.mdl-color--white {
+  background: white;
+}
+
 .mrb-sublist .mdl-list {
   margin: 0px;
   padding: 0px;

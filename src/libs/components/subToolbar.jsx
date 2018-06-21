@@ -9,7 +9,14 @@ import PropTypes from "prop-types";
 import { Icon, Menu, MenuItem } from "zrmc";
 import HeaderIcon from "./headerIcon";
 
-const SubToolbar = ({ titleIcon, titleName, icons, menu }) => {
+const SubToolbar = ({
+  titleIcon,
+  titleName,
+  icons,
+  menu,
+  style,
+  className,
+}) => {
   const menuRender = () => {
     if (menu) {
       const id = `${titleName}-menu`;
@@ -78,16 +85,20 @@ const SubToolbar = ({ titleIcon, titleName, icons, menu }) => {
     return <div />;
   };
   let headerIcon = null;
-  let style = {};
+  let cn = "mrb-panel-header ";
+  if (className) {
+    cn += className;
+  }
+  let s = {};
   if (titleIcon) {
     headerIcon = <HeaderIcon name={titleIcon} />;
   } else {
-    style = { marginLeft: "16px" };
+    s = { marginLeft: "16px" };
   }
   return (
-    <div className="mrb-panel-header">
+    <div style={style} className={cn}>
       {headerIcon}
-      <div style={style} className="mrb-panel-header-title">
+      <div style={s} className="mrb-panel-header-title">
         {titleName}
       </div>
       <div className="mrb-panel-header__actions">
@@ -111,6 +122,8 @@ SubToolbar.propTypes = {
   menu: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape({})),
   }),
+  style: PropTypes.shape({}),
+  className: PropTypes.string,
 };
 
 export default SubToolbar;

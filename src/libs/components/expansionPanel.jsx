@@ -50,7 +50,7 @@ class ExpansionPanel extends Component {
       description,
     } = this.props;
     const sHeader = {};
-    const sPanel = {};
+    const sPanel = { display: "block", overflow: "hidden" };
     let cn = "mrb-sublist ";
     if (className) {
       cn += className;

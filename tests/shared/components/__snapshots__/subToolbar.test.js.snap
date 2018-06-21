@@ -2,7 +2,8 @@
 
 exports[`SubToolbar renders correctly 1`] = `
 <div
-  className="mrb-panel-header"
+  className="mrb-panel-header "
+  style={undefined}
 >
   <div
     className="mrb-panel-header-title"

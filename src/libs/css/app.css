@@ -17,7 +17,10 @@
 .mrb-subheader {
   text-transform: capitalize;
   height: 48px;
+  cursor: pointer;
+  user-select: none;
 }
+
 .mrb-subheader > div {
   padding-left: 18px;
   line-height: 48px;
@@ -33,7 +36,8 @@
   float: right;
   margin-right: 16px;
   margin-top: 4px;
-  color: rgba(0,0,0,0.38);
+  font-size: 1.5em;
+  color: rgba(0,0,0,.54);
 }
 
 .mrb-subheader-right i {
@@ -268,4 +272,13 @@
   position: relative;
   margin-top: auto;
   padding: 4px 16px;
+}
+
+@keyframes rotate-arrow {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }

@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 
 class Tooltip extends Component {
   updatePosition() {
-    console.log("setRef", this.containerRef);
+    // console.log("setRef", this.containerRef);
     if (this.tooltipRef && this.containerRef) {
       const {
         left,

@@ -283,9 +283,10 @@
   padding: 4px 16px;
 }
 
+/*
 .mdc-tooltype {
-  /* position: relative; */
 }
+*/
 
 .mdc-tooltype > span {
   display: inline-block;

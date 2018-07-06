@@ -12,10 +12,12 @@ import Steppers from "./components/steppers";
 import SubToolbars from "./components/subToolbars";
 import Lists from "./components/lists";
 import FileInputs from "./components/fileInputs";
+import Tooltips from "./components/tooltips";
 
 const Main = ({ children }) => (
   <main>
     {children}
+    <Tooltips />
     <SubToolbars />
     <Lists />
     <ContentEditables />

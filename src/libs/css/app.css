@@ -283,6 +283,39 @@
   padding: 4px 16px;
 }
 
+.mdc-tooltype {
+  /* position: relative; */
+}
+
+.mdc-tooltype > span {
+  display: inline-block;
+  position: fixed;
+  opacity: 0;
+  padding: 8px 16px;
+  text-align: center;
+  text-transform: none;
+  font-size: 12px;
+  border-radius: 4px;
+  color: #ffffff;
+  background: #232F34;
+  pointer-events: none;
+  margin-top:8px;
+  transform: scale(0);
+  transition: all 150ms;
+  transition-timing-function: cubic-bezier(.4, 0, 1, 1); 
+  z-index: 100;
+}
+
+.mdc-tooltype > span::first-letter {
+  text-transform: uppercase;
+}
+
+.mdc-tooltype:hover span {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 75ms;
+}
+
 @keyframes rotate-arrow {
   from {
     transform: rotate(180deg);

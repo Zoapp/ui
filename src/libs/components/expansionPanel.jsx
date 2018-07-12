@@ -141,7 +141,7 @@ ExpansionPanel.defaultProps = {
 ExpansionPanel.propTypes = {
   collapsed: PropTypes.bool,
   disabled: PropTypes.bool,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   description: PropTypes.string,
   style: PropTypes.shape({}),
   className: PropTypes.string,

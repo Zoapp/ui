@@ -6,12 +6,13 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
-import { Icon, Menu, MenuItem } from "zrmc";
+import { Icon, Menu, MenuItem, Button } from "zrmc";
 import HeaderIcon from "./headerIcon";
 
 const SubToolbar = ({
   titleIcon,
   titleName,
+  actions,
   icons,
   menu,
   style,
@@ -67,7 +68,7 @@ const SubToolbar = ({
       return (
         <div>
           {icons.map((icon, index) => {
-            const key = `m_${index}`;
+            const key = `i_${index}`;
             return (
               <Icon
                 key={key}
@@ -77,6 +78,26 @@ const SubToolbar = ({
                   if (icon.onClick) icon.onClick();
                 }}
               />
+            );
+          })}
+        </div>
+      );
+    } else if (actions) {
+      return (
+        <div>
+          {actions.map((action, index) => {
+            const key = `a_${index}`;
+            return (
+              <Button
+                key={key}
+                compact
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (action.onClick) action.onClick();
+                }}
+              >
+                {action.name}
+              </Button>
             );
           })}
         </div>
@@ -112,12 +133,14 @@ SubToolbar.defaultProps = {
   titleIcon: null,
   icons: null,
   menu: null,
+  actions: null,
 };
 
 SubToolbar.propTypes = {
   titleName: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
     .isRequired,
   titleIcon: PropTypes.string,
+  actions: PropTypes.arrayOf(PropTypes.shape({})),
   icons: PropTypes.arrayOf(PropTypes.shape({})),
   menu: PropTypes.shape({
     items: PropTypes.arrayOf(PropTypes.shape({})),

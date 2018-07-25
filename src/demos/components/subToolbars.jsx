@@ -32,6 +32,16 @@ const SubToolbars = () => (
     </div>
     <div style={{ padding: "16px" }}>
       <SubToolbar
+        titleIcon="question_answer"
+        titleName="Title"
+        actions={[
+          { name: "Cancel", onClick: () => {} },
+          { name: "Save", onClick: () => {} },
+        ]}
+      />
+    </div>
+    <div style={{ padding: "16px" }}>
+      <SubToolbar
         titleIcon="chat"
         titleName="Title"
         menu={{

@@ -8,6 +8,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Icon, Menu, MenuItem, Button } from "zrmc";
 import HeaderIcon from "./headerIcon";
+import ToolTip from "./tooltip";
 
 const SubToolbar = ({
   titleIcon,
@@ -17,6 +18,8 @@ const SubToolbar = ({
   menu,
   style,
   className,
+  darkTheme,
+  titleIconColor,
 }) => {
   const menuRender = () => {
     if (menu) {
@@ -66,10 +69,10 @@ const SubToolbar = ({
   const iconsRender = () => {
     if (icons) {
       return (
-        <div>
+        <div style={{ display: "flex", marginTop: "12px" }}>
           {icons.map((icon, index) => {
             const key = `i_${index}`;
-            return (
+            const el = (
               <Icon
                 key={key}
                 name={icon.name}
@@ -79,18 +82,27 @@ const SubToolbar = ({
                 }}
               />
             );
+            if (icon.tooltip) {
+              return (
+                <ToolTip label={icon.tooltip} key={key}>
+                  {el}
+                </ToolTip>
+              );
+            }
+            return el;
           })}
         </div>
       );
     } else if (actions) {
       return (
-        <div>
+        <div style={{ display: "flex", marginTop: "6px" }}>
           {actions.map((action, index) => {
             const key = `a_${index}`;
-            return (
+            const el = (
               <Button
                 key={key}
                 compact
+                disabled={action.disabled}
                 onClick={(e) => {
                   e.preventDefault();
                   if (action.onClick) action.onClick();
@@ -99,6 +111,14 @@ const SubToolbar = ({
                 {action.name}
               </Button>
             );
+            if (action.tooltip) {
+              return (
+                <ToolTip label={action.tooltip} key={key}>
+                  {el}
+                </ToolTip>
+              );
+            }
+            return el;
           })}
         </div>
       );
@@ -107,12 +127,19 @@ const SubToolbar = ({
   };
   let headerIcon = null;
   let cn = "mrb-panel-header ";
+  if (darkTheme) {
+    cn = `mrb-panel-header-dark ${cn}`;
+  }
   if (className) {
     cn += className;
   }
   let s = {};
   if (titleIcon) {
-    headerIcon = <HeaderIcon name={titleIcon} />;
+    let st = null;
+    if (titleIconColor) {
+      st = { color: titleIconColor };
+    }
+    headerIcon = <HeaderIcon name={titleIcon} style={st} />;
   } else {
     s = { marginLeft: "16px" };
   }
@@ -131,15 +158,18 @@ const SubToolbar = ({
 };
 SubToolbar.defaultProps = {
   titleIcon: null,
+  titleIconColor: null,
   icons: null,
   menu: null,
   actions: null,
+  darkTheme: false,
 };
 
 SubToolbar.propTypes = {
   titleName: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
     .isRequired,
   titleIcon: PropTypes.string,
+  titleIconColor: PropTypes.string,
   actions: PropTypes.arrayOf(PropTypes.shape({})),
   icons: PropTypes.arrayOf(PropTypes.shape({})),
   menu: PropTypes.shape({
@@ -147,6 +177,7 @@ SubToolbar.propTypes = {
   }),
   style: PropTypes.shape({}),
   className: PropTypes.string,
+  darkTheme: PropTypes.bool,
 };
 
 export default SubToolbar;

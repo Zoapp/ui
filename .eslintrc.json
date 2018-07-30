@@ -48,7 +48,8 @@
     "settings": {
         "import/resolver": {
             "jest": {
-                "jestConfigFile": false
+                "jestConfigFile": false,
+                "testEnvironment": "node"
             },
             "webpack": {
                 "config": "webpack.common.js"

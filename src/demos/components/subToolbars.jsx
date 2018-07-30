@@ -35,8 +35,8 @@ const SubToolbars = () => (
         titleIcon="question_answer"
         titleName="Title"
         actions={[
-          { name: "Cancel", onClick: () => {} },
-          { name: "Save", onClick: () => {} },
+          { name: "Cancel", disabled: true, onClick: () => {} },
+          { name: "Save", tooltip: "Save it", onClick: () => {} },
         ]}
       />
     </div>
@@ -44,6 +44,30 @@ const SubToolbars = () => (
       <SubToolbar
         titleIcon="chat"
         titleName="Title"
+        menu={{
+          items: [
+            { name: "Context", onSelect: () => {} },
+            { name: "Load", disabled: true },
+            { name: "Save", disabled: true },
+            { name: "Reset", onSelect: () => {} },
+            { name: "Demo", onSelect: () => {} },
+            { name: "Share", onSelect: () => {} },
+            { name: "Settings", onSelect: () => {} },
+          ],
+          align: "right",
+        }}
+      />
+    </div>
+    <div style={{ padding: "16px" }}>
+      <SubToolbar
+        titleIcon="chat"
+        titleName="Title"
+        titleIconColor="#fcea22"
+        darkTheme
+        icons={[
+          { name: "home", onClick: () => {} },
+          { name: "language", tooltip: "Change language", onClick: () => {} },
+        ]}
         menu={{
           items: [
             { name: "Context", onSelect: () => {} },

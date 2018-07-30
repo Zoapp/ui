@@ -7,10 +7,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const HeaderIcon = ({ name }) => {
+const HeaderIcon = ({ name, style }) => {
   if (name === "robot") {
     return (
-      <div className="mrb-panel-header-icon">
+      <div className="mrb-panel-header-icon" style={style}>
         <svg
           style={{ width: "20px", height: "20px", paddingBottom: "6px" }}
           viewBox="0 0 24 24"
@@ -25,7 +25,7 @@ const HeaderIcon = ({ name }) => {
   } else if (name === "opla") {
     // TODO remove Opla hardcoding
     return (
-      <div className="mrb-panel-header-icon">
+      <div className="mrb-panel-header-icon" style={style}>
         <svg
           style={{ width: "20px", height: "20px", paddingBottom: "6px" }}
           viewBox="0 0 24 24"
@@ -38,11 +38,16 @@ const HeaderIcon = ({ name }) => {
       </div>
     );
   }
-  return <i className="material-icons mrb-panel-header-icon">{name}</i>;
+  return (
+    <i className="material-icons mrb-panel-header-icon" style={style}>
+      {name}
+    </i>
+  );
 };
 
 HeaderIcon.propTypes = {
   name: PropTypes.string.isRequired,
+  style: PropTypes.shape({}),
 };
 
 export default HeaderIcon;

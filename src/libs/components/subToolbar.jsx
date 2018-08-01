@@ -57,7 +57,7 @@ const SubToolbar = ({
           <Icon
             name="more_vert"
             id={id}
-            className="mrb-subheader-menu"
+            className="zui-subheader-menu"
             menu={me}
           />
         </div>
@@ -126,9 +126,9 @@ const SubToolbar = ({
     return <div />;
   };
   let headerIcon = null;
-  let cn = "mrb-panel-header ";
+  let cn = "zui-panel-header ";
   if (darkTheme) {
-    cn = `mrb-panel-header-dark ${cn}`;
+    cn = `zui-panel-header-dark ${cn}`;
   }
   if (className) {
     cn += className;
@@ -146,10 +146,10 @@ const SubToolbar = ({
   return (
     <div style={style} className={cn}>
       {headerIcon}
-      <div style={s} className="mrb-panel-header-title">
+      <div style={s} className="zui-panel-header-title">
         {titleName}
       </div>
-      <div className="mrb-panel-header__actions">
+      <div className="zui-panel-header__actions">
         {iconsRender()}
         {menuRender()}
       </div>

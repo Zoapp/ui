@@ -43,25 +43,34 @@ class ExpansionPanel extends Component {
     const {
       label,
       disabled,
+      compact,
       children,
       style,
       className,
       elevation,
+      leftArrow,
       description,
     } = this.props;
     const sHeader = {};
     const sPanel = { display: "block", overflow: "hidden" };
-    let cn = "mrb-sublist ";
+    let cn = "zui-sublist ";
     if (className) {
       cn += className;
+    }
+    if (leftArrow) {
+      cn += `zui-expansion-leftarrow ${cn}`;
     }
     const { rotate } = this.state;
     const expanded = !this.state.collapsed || rotate;
     if (expanded) {
-      // s.display = "block";
       sPanel.height = "100%";
-      sHeader.height = "64px";
-      sHeader.paddingTop = "4px";
+      if (compact) {
+        sHeader.height = "48px";
+        sHeader.paddingTop = "0px";
+      } else {
+        sHeader.height = "64px";
+        sHeader.paddingTop = "4px";
+      }
     } else {
       sPanel.height = "0px";
     }
@@ -78,11 +87,16 @@ class ExpansionPanel extends Component {
     sHeader.transition = "height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms";
 
     const icon = expanded ? "keyboard_arrow_up" : "keyboard_arrow_down";
+    const desc = description ? (
+      <div className="zui-expansion-description">{description}</div>
+    ) : (
+      ""
+    );
     return (
       <div className={cn} style={st}>
         <div
           style={sHeader}
-          className="mrb-subheader"
+          className="zui-subheader"
           onClick={(e) => {
             e.preventDefault();
             if (!disabled) {
@@ -91,7 +105,7 @@ class ExpansionPanel extends Component {
           }}
         >
           <div
-            style={{ height: "48px", width: "48px", float: "right" }}
+            className="zui-expansion-arrow"
             ref={(e) => {
               if (e) {
                 this.icon = e.firstChild;
@@ -102,7 +116,7 @@ class ExpansionPanel extends Component {
           >
             <Icon
               name={icon}
-              className="mrb-subheader-right"
+              className="zui-subheader-right"
               style={{
                 animation,
                 fontSize: "24px",
@@ -112,11 +126,14 @@ class ExpansionPanel extends Component {
               disabled={disabled}
             />
           </div>
-          <div style={{ display: "flex" }}>
-            <span style={{ width: "33%" }}>{label}</span>
-            <span style={{ paddingLeft: "16px", color: "rgba(0, 0, 0, 0.54)" }}>
-              {description}
-            </span>
+          <div style={description ? { display: "flex" } : null}>
+            <div
+              className="zui-expansion-title"
+              style={description ? { width: "33%" } : null}
+            >
+              {label}
+            </div>
+            {desc}
           </div>
         </div>
         <div
@@ -136,11 +153,15 @@ ExpansionPanel.defaultProps = {
   collapsed: false,
   disabled: false,
   elevation: 1,
+  compact: false,
+  leftArrow: false,
 };
 
 ExpansionPanel.propTypes = {
   collapsed: PropTypes.bool,
   disabled: PropTypes.bool,
+  compact: PropTypes.bool,
+  leftArrow: PropTypes.bool,
   label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   description: PropTypes.string,
   style: PropTypes.shape({}),

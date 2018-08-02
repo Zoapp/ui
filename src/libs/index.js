@@ -6,7 +6,6 @@
  */
 import Stepper from "./components/stepper";
 import ListComponent from "./components/list/listComponent";
-import ListItemContentEx from "./components/list/listItemContentEx";
 import ListDragComponent from "./components/list/listDragComponent";
 import ListDragItem from "./components/list/listDragItem";
 import HeaderIcon from "./components/headerIcon";
@@ -22,7 +21,6 @@ import DrawerFooter from "./components/drawerFooter";
 export {
   Stepper,
   ListComponent,
-  ListItemContentEx,
   ListDragComponent,
   ListDragItem,
   ContentEditable,

@@ -83,7 +83,7 @@
     "webpack-merge": "^4.1.1"
   },
   "jest": {
-    "testEnvironment": "node",
+    "testURL": "http://localhost",
     "moduleNameMapper": {
       "demos/(.*)": "<rootDir>/src/demos/$1",
       "libs/(.*)": "<rootDir>/src/libs/$1",

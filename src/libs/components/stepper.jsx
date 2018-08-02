@@ -14,8 +14,8 @@ const Stepper = (props) => {
     <div className="zui-stepper-horizontal-alternative">
       {steps.map((step, index) => {
         let cn = "zui-stepper-step";
-        cn += step.active ? " active-step" : "";
-        cn += step.done ? " step-done" : "";
+        cn += step.active ? " zui-active-step" : "";
+        cn += step.done ? " zui-step-done" : "";
         cn += step.editable ? " editable-step" : "";
         const { id } = step;
         const i = index + 1;

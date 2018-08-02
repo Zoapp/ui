@@ -3,7 +3,6 @@
 exports[`SubToolbar renders correctly 1`] = `
 <div
   className="zui-panel-header "
-  style={undefined}
 >
   <div
     className="zui-panel-header-title"

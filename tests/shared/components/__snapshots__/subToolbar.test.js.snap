@@ -2,11 +2,10 @@
 
 exports[`SubToolbar renders correctly 1`] = `
 <div
-  className="mrb-panel-header "
-  style={undefined}
+  className="zui-panel-header "
 >
   <div
-    className="mrb-panel-header-title"
+    className="zui-panel-header-title"
     style={
       Object {
         "marginLeft": "16px",
@@ -16,7 +15,7 @@ exports[`SubToolbar renders correctly 1`] = `
     some-name
   </div>
   <div
-    className="mrb-panel-header__actions"
+    className="zui-panel-header__actions"
   >
     <div />
     <div />

@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from "react";
-import { ExpansionPanel } from "../../../src/libs";
+import { ExpansionPanel, ListComponent } from "../../../src/libs";
 
 const ExpansionPanels = () => (
   <section>
@@ -22,7 +22,7 @@ const ExpansionPanels = () => (
           culpa qui officia deserunt mollit anim id est laborum.
         </div>
       </ExpansionPanel>
-      <ExpansionPanel label="name 2" collapsed description="description">
+      <ExpansionPanel label="name 2" collapsed>
         <div style={{ width: "600px", padding: "24px" }}>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
@@ -37,6 +37,79 @@ const ExpansionPanels = () => (
           ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
           ea voluptate velit esse quam nihil molestiae consequatur, vel illum
           qui dolorem eum fugiat quo voluptas nulla pariatur?
+        </div>
+      </ExpansionPanel>
+    </div>
+
+    <div className="mdc-elevation--z1" style={{ margin: "24px" }}>
+      <ExpansionPanel
+        label="list 1"
+        description="description"
+        compact
+        style={{ margin: "0px" }}
+        elevation={0}
+        leftArrow
+      >
+        <div style={{ width: "600px", padding: "0 24px" }}>
+          <ListComponent
+            items={[
+              {
+                id: "i1",
+                name: "Item 1",
+                icon: "add",
+                color: "gray",
+              },
+              {
+                id: "i2",
+                name: "Item 2",
+                icon: "add",
+                color: "gray",
+              },
+              {
+                id: "i3",
+                name: "Item 3",
+                icon: "add",
+                color: "gray",
+              },
+            ]}
+            selectedItem={-1}
+            onSelect={() => {}}
+          />
+        </div>
+      </ExpansionPanel>
+      <ExpansionPanel
+        label="list 2"
+        collapsed
+        compact
+        style={{ margin: "0px" }}
+        elevation={0}
+        leftArrow
+      >
+        <div style={{ width: "600px", padding: "0 24px" }}>
+          <ListComponent
+            items={[
+              {
+                id: "i1",
+                name: "Item 1",
+                icon: "add",
+                color: "gray",
+              },
+              {
+                id: "i2",
+                name: "Item 2",
+                icon: "add",
+                color: "gray",
+              },
+              {
+                id: "i3",
+                name: "Item 3",
+                icon: "add",
+                color: "gray",
+              },
+            ]}
+            selectedItem={-1}
+            onSelect={() => {}}
+          />
         </div>
       </ExpansionPanel>
     </div>

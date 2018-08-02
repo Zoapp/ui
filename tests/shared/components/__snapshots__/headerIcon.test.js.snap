@@ -2,8 +2,7 @@
 
 exports[`HeaderIcon renders a generic icon 1`] = `
 <i
-  className="material-icons mrb-panel-header-icon"
-  style={undefined}
+  className="material-icons zui-panel-header-icon"
 >
   some-name
 </i>
@@ -11,8 +10,7 @@ exports[`HeaderIcon renders a generic icon 1`] = `
 
 exports[`HeaderIcon renders a opla icon 1`] = `
 <div
-  className="mrb-panel-header-icon"
-  style={undefined}
+  className="zui-panel-header-icon"
 >
   <svg
     style={
@@ -34,8 +32,7 @@ exports[`HeaderIcon renders a opla icon 1`] = `
 
 exports[`HeaderIcon renders a robot icon 1`] = `
 <div
-  className="mrb-panel-header-icon"
-  style={undefined}
+  className="zui-panel-header-icon"
 >
   <svg
     style={

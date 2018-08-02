@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 const IconExButton = ({ name }) => {
   if (name === "robot") {
     return (
-      <div className="mrb-panel-header-icon">
+      <div className="zui-panel-header-icon">
         <svg
           style={{ width: "20px", height: "20px", paddingBottom: "6px" }}
           viewBox="0 0 24 24"
@@ -25,12 +25,12 @@ const IconExButton = ({ name }) => {
   } else if (name === "opla") {
     // TODO remove opla hardcoding
     return (
-      <div className="mrb-panel-header-icon">
+      <div className="zui-panel-header-icon">
         <img alt="opla" />
       </div>
     );
   }
-  return <i className="material-icons mrb-panel-header-icon">{name}</i>;
+  return <i className="material-icons zui-panel-header-icon">{name}</i>;
 };
 
 IconExButton.propTypes = {

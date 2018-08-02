@@ -57,7 +57,7 @@ const SubToolbar = ({
           <Icon
             name="more_vert"
             id={id}
-            className="zui-subheader-menu"
+            className="zui-panel-header-menu"
             menu={me}
           />
         </div>

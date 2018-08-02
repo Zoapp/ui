@@ -53,7 +53,7 @@ class ExpansionPanel extends Component {
     } = this.props;
     const sHeader = {};
     const sPanel = { display: "block", overflow: "hidden" };
-    let cn = "zui-sublist ";
+    let cn = "zui-expansion ";
     if (className) {
       cn += className;
     }
@@ -96,7 +96,7 @@ class ExpansionPanel extends Component {
       <div className={cn} style={st}>
         <div
           style={sHeader}
-          className="zui-subheader"
+          className="zui-expansion-header"
           onClick={(e) => {
             e.preventDefault();
             if (!disabled) {
@@ -116,7 +116,7 @@ class ExpansionPanel extends Component {
           >
             <Icon
               name={icon}
-              className="zui-subheader-right"
+              className="zui-expansion-arrow-icon"
               style={{
                 animation,
                 fontSize: "24px",
@@ -126,7 +126,7 @@ class ExpansionPanel extends Component {
               disabled={disabled}
             />
           </div>
-          <div style={description ? { display: "flex" } : null}>
+          <div style={{ display: "flex", width: "100%" }}>
             <div
               className="zui-expansion-title"
               style={description ? { width: "33%" } : null}

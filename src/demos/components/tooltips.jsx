@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from "react";
-import { Icon } from "zrmc";
+import { IconToggle } from "zrmc";
 import { Tooltip } from "../../../src/libs";
 
 const ToolTips = () => (
@@ -36,13 +36,13 @@ const ToolTips = () => (
         }}
       >
         <Tooltip label="tooltip 2">
-          <Icon name="help" ripple />
+          <IconToggle name="help" off="help_outline" derivedState />
         </Tooltip>
         <Tooltip label="tooltip 3">
-          <Icon name="backup" ripple />
+          <IconToggle name="work" off="work_outline" derivedState />
         </Tooltip>
         <Tooltip label="tooltip 3">
-          <Icon name="favorite" ripple />
+          <IconToggle name="favorite" off="favorite_border" derivedState />
         </Tooltip>
       </div>
     </div>

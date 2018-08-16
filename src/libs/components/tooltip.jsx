@@ -9,7 +9,6 @@ import PropTypes from "prop-types";
 
 class Tooltip extends Component {
   updatePosition() {
-    // console.log("setRef", this.containerRef);
     if (this.tooltipRef && this.containerRef) {
       const {
         left,
@@ -24,11 +23,17 @@ class Tooltip extends Component {
       if (adjustedLeft < 0) {
         adjustedLeft = 0;
       }
+      /* const scrollTop = Math.max(
+        window.pageYOffset,
+        document.documentElement.scrollTop,
+        document.body.scrollTop,
+      ); */
       const adjustedTop = top + height;
       style = `left: ${adjustedLeft}px; top: ${adjustedTop}px;`;
       this.tooltipRef.style = style;
     }
   }
+
   setRef = (r) => {
     this.tooltipRef = r;
     this.updatePosition();
@@ -41,6 +46,12 @@ class Tooltip extends Component {
         className="mdc-tooltype"
         ref={(r) => {
           this.containerRef = r;
+          this.updatePosition();
+        }}
+        onMouseEnter={() => {
+          this.updatePosition();
+        }}
+        onWheel={() => {
           this.updatePosition();
         }}
       >

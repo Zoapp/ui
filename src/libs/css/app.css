@@ -52,7 +52,7 @@
 }
 
 .zui-expansion-arrow-icon:hover {
-  color: rgba(85,38,130);
+  color: rgb(85,38,130);
 }
 
 .zui-expansion-arrow-icon {
@@ -183,7 +183,7 @@
 }
 
 .zui-panel-header-menu:hover {
-  color: rgba(85,38,130);
+  color: rgb(85,38,130);
 }
 
 .zui-panel-header-dark .zui-panel-header__actions > div i:hover {
@@ -232,7 +232,7 @@
 }
 
 .zui-panel-header__actions > div > i:hover {
-  color: rgba(85,38,130);
+  color: rgb(85,38,130);
  }
 
 .zui-panel-header-icon {

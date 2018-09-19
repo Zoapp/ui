@@ -138,6 +138,7 @@ class ExpansionPanel extends Component {
         </div>
         <div
           style={sPanel}
+          className="zui-expansion-content"
           ref={(e) => {
             this.panel = e;
           }}

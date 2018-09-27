@@ -256,7 +256,7 @@
 
 .zui-table > table > tbody tr {
   color: rgba(0, 0, 0, 0.87);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 48px;
 }
 
@@ -268,7 +268,7 @@
 
 .zui-table > table > tbody td > div {
   height: 48px;
-  margin-right: 24px;
+  margin-right: 16px;
 }
 
 .zui-table > table > tbody .zui-table_icon {

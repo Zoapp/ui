@@ -239,6 +239,59 @@
   line-height: 1;
 }
 
+/* zui-table css styles */
+
+.zui-table > table > thead tr {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 13px;
+  height: 56px;
+  padding: 0 56px 0 0;
+  text-align: left;
+}
+
+.zui-table > table > thead th {
+  text-align: left;
+  padding-left: 24px;
+}
+
+.zui-table > table > tbody tr {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 13px;
+  line-height: 48px;
+}
+
+.zui-table > table > tbody td {
+  height: 48px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0px;
+}
+
+.zui-table > table > tbody td > div {
+  height: 48px;
+  margin-right: 24px;
+}
+
+.zui-table > table > tbody .zui-table_icon {
+  width: 48px;
+  height: 48px;
+}
+
+.zui-table_icon > div > * {
+  width: 36px;
+  height: 36px;
+  padding-top: 6px;
+}
+
+.zui-table_cell {
+  text-align: left;
+  padding-left: 24px;
+}
+
+.zui-table_bottom {
+  width: 100%;
+  height: 56px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
 /* zui-stepper css styles */
 
 .zui-stepper-horizontal-alternative .zui-stepper-step {

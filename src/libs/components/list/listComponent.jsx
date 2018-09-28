@@ -19,10 +19,6 @@ const ListComponent = ({ items, selectedItem, onSelect, className, style }) => (
         if (!color) {
           color = "gray";
         }
-        /* const st = {
-          backgroundColor: color,
-          padding: "8px",
-        }; */
         if (item.icon.endsWith(".svg")) {
           imgSrc = item.icon;
         } else if (item.icon.endsWith(".png")) {

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Icon } from "zrmc";
+import { Icon, Menu, MenuItem } from "zrmc";
 
 const TableComponent = ({
   title,
@@ -10,6 +10,7 @@ const TableComponent = ({
   onSelect,
   className,
   style,
+  menu,
 }) => {
   const s = style || {};
   if (!s.width) {
@@ -55,6 +56,49 @@ const TableComponent = ({
             if (selectedItem === index) {
               cn = "selectedListItem";
             }
+            let rmenu;
+            const id = `zt_menu_${index}`;
+            if (menu) {
+              const align = "left";
+              const me = (
+                <Menu target={id} align={align}>
+                  {menu.map((m, i) => {
+                    const key = `m_${index}_${i}`;
+                    if (m.disabled) {
+                      return (
+                        <MenuItem key={key} disabled>
+                          {m.name}
+                        </MenuItem>
+                      );
+                    }
+                    return (
+                      <MenuItem
+                        key={key}
+                        onSelected={() => {
+                          if (m.onSelect) {
+                            m.onSelect(m.name, index);
+                          }
+                        }}
+                      >
+                        {m.name}
+                      </MenuItem>
+                    );
+                  })}
+                </Menu>
+              );
+              rmenu = (
+                <td>
+                  <div>
+                    <Icon
+                      name="more_vert"
+                      id={id}
+                      className="zui_table-menu"
+                      menu={me}
+                    />
+                  </div>
+                </td>
+              );
+            }
             return (
               <tr
                 key={item.id}
@@ -75,6 +119,7 @@ const TableComponent = ({
                     </td>
                   );
                 })}
+                {rmenu}
               </tr>
             );
           })}
@@ -98,6 +143,7 @@ TableComponent.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   selectedItem: PropTypes.number.isRequired,
   onSelect: PropTypes.func.isRequired,
+  menu: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 export default TableComponent;

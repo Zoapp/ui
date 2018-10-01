@@ -434,6 +434,10 @@
   margin-right: 20px;
 }
 
+.zui_table-menu {
+  margin-top: 12px;
+}
+
 .mdc-drawer__footer {
   position: relative;
   margin-top: auto;

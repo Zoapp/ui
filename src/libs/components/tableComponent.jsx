@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Icon } from "zrmc";
+import { Icon, Menu, MenuItem } from "zrmc";
 
 const TableComponent = ({
   title,
@@ -10,130 +10,122 @@ const TableComponent = ({
   onSelect,
   className,
   style,
+  menu,
 }) => {
   const s = style || {};
   if (!s.width) {
     s.width = "100%";
   }
   s.borderSpacing = "0";
+  let thead;
+  if (headers) {
+    thead = (
+      <thead>
+        <tr>
+          {headers.map((h, index) => {
+            const key = `h_${index}`;
+            return <th key={key}>{h}</th>;
+          })}
+        </tr>
+      </thead>
+    );
+  }
   return (
-    <div>
-      <div style={{ minHeight: "400px" }}>
-        {title}
-        <table className={className} style={s}>
-          <thead>
-            <tr
-              style={{
-                color: "rgba(0, 0, 0, 0.26)",
-                fontSize: "13px",
-                height: "56px",
-                padding: "0 56px 0 0",
-                verticalAlign: "middle",
-                textAlign: "left",
-              }}
-            >
-              {headers.map((h, index) => {
-                const st = {
-                  textAlign: "left",
-                  paddingLeft: "24px",
-                };
-                const key = `h_${index}`;
-                return (
-                  <th key={key} style={st}>
-                    {h}
-                  </th>
-                );
-              })}
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((item, index) => {
-              let icon = "";
-              if (item.icon) {
-                let { color } = item;
-                if (!color) {
-                  color = "transparent";
-                }
-                const stl = {
-                  backgroundColor: color,
-                  padding: "8px",
-                };
-                if (item.icon.endsWith(".svg")) {
-                  icon = (
-                    <div style={stl}>
-                      <img style={{}} src={item.icon} alt={item.name} />
-                    </div>
-                  );
-                } else if (item.icon.endsWith(".png")) {
-                  icon = (
-                    <div style={style}>
-                      <img
-                        style={{ width: "40px" }}
-                        src={item.icon}
-                        alt={item.name}
-                      />
-                    </div>
-                  );
-                } else {
-                  icon = (
-                    <div style={style}>
-                      <Icon style={{}} name={item.icon} />
-                    </div>
-                  );
-                }
+    <div className="zui-table">
+      {title}
+      <table className={className} style={s}>
+        {thead}
+        <tbody>
+          {items.map((item, index) => {
+            let icon = "";
+            if (item.icon) {
+              let { color } = item;
+              if (!color) {
+                color = "transparent";
               }
-              const { values } = item;
-              let cn = "selectableListItem";
-              if (selectedItem === index) {
-                cn = "selectedListItem";
+              if (item.icon.endsWith(".svg")) {
+                icon = <img style={{}} src={item.icon} alt={item.name} />;
+              } else if (item.icon.endsWith(".png")) {
+                icon = <img src={item.icon} alt={item.name} />;
+              } else {
+                icon = <Icon style={{}} name={item.icon} />;
               }
-              const st = {
-                textAlign: "left",
-                paddingLeft: "24px",
-                height: "48px",
-                borderTop: "1px solid rgba(0, 0, 0, 0.12)",
-              };
-              return (
-                <tr
-                  key={item.id}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    onSelect(index);
-                  }}
-                  className={cn}
-                  style={{ color: "rgba(0, 0, 0, 0.87)", fontSize: "13px" }}
-                >
-                  <td
-                    style={{
-                      width: "48px",
-                      verticalAlign: "middle",
-                      height: "48px",
-                      borderTop: "1px solid rgba(0, 0, 0, 0.12)",
-                    }}
-                  >
-                    {icon}
-                  </td>
-                  {values.map((value, i) => {
-                    const k = `c_${i}`;
+            }
+            const { values } = item;
+            let cn = "selectableListItem";
+            if (selectedItem === index) {
+              cn = "selectedListItem";
+            }
+            let rmenu;
+            const id = `zt_menu_${index}`;
+            if (menu) {
+              const align = "left";
+              const me = (
+                <Menu target={id} align={align}>
+                  {menu.map((m, i) => {
+                    const key = `m_${index}_${i}`;
+                    if (m.disabled) {
+                      return (
+                        <MenuItem key={key} disabled>
+                          {m.name}
+                        </MenuItem>
+                      );
+                    }
                     return (
-                      <td key={k} style={st}>
-                        {value}
-                      </td>
+                      <MenuItem
+                        key={key}
+                        onSelected={() => {
+                          if (m.onSelect) {
+                            m.onSelect(m.name, index);
+                          }
+                        }}
+                      >
+                        {m.name}
+                      </MenuItem>
                     );
                   })}
-                </tr>
+                </Menu>
               );
-            })}
-          </tbody>
-        </table>
-      </div>
-      <div
-        style={{
-          width: "100%",
-          height: "56px",
-          borderTop: "1px solid rgba(0, 0, 0, 0.12)",
-        }}
-      />
+              rmenu = (
+                <td>
+                  <div>
+                    <Icon
+                      name="more_vert"
+                      id={id}
+                      className="zui_table-menu"
+                      menu={me}
+                    />
+                  </div>
+                </td>
+              );
+            }
+            return (
+              <tr
+                key={item.id}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelect(index);
+                }}
+                className={cn}
+              >
+                <td className="zui-table_icon">
+                  <div>{icon}</div>
+                </td>
+                {values.map((value, i) => {
+                  const k = `c_${i}`;
+                  return (
+                    <td key={k} className="zui-table_cell">
+                      <div>{value || "-"}</div>
+                    </td>
+                  );
+                })}
+                {rmenu}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <div className="zui-table_bottom" />
     </div>
   );
 };
@@ -144,13 +136,14 @@ TableComponent.defaultProps = {
 };
 
 TableComponent.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   className: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
-  headers: PropTypes.arrayOf(PropTypes.string).isRequired,
+  headers: PropTypes.arrayOf(PropTypes.string),
   items: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   selectedItem: PropTypes.number.isRequired,
   onSelect: PropTypes.func.isRequired,
+  menu: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 export default TableComponent;

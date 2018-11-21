@@ -17,6 +17,7 @@ import TableComponent from "./components/tableComponent";
 import Tooltip from "./components/tooltip";
 import FileInput from "./components/fileInput";
 import DrawerFooter from "./components/drawerFooter";
+import TreeView from "./components/treeView";
 
 export {
   Stepper,
@@ -32,4 +33,5 @@ export {
   Tooltip,
   FileInput,
   DrawerFooter,
+  TreeView,
 };

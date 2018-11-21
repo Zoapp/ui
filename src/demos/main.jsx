@@ -13,6 +13,7 @@ import SubToolbars from "./components/subToolbars";
 import Lists from "./components/lists";
 import FileInputs from "./components/fileInputs";
 import Tooltips from "./components/tooltips";
+import TreeViews from "./components/treeviews";
 
 const Main = ({ children }) => (
   <main>
@@ -20,6 +21,7 @@ const Main = ({ children }) => (
     <Tooltips />
     <SubToolbars />
     <Lists />
+    <TreeViews />
     <ContentEditables />
     <ExpansionPanels />
     <Steppers />

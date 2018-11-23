@@ -30,7 +30,14 @@ const TreeViews = () => (
                 name: "SubItem 2",
                 icon: "folder",
                 color: "gray",
-                children: [],
+                children: [
+                  {
+                    id: "i2aa",
+                    name: "SubItem 1",
+                    icon: "insert_drive_file",
+                    color: "gray",
+                  },
+                ],
               },
             ],
           },

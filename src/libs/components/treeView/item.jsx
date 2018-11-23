@@ -23,11 +23,17 @@ export default class Item extends Component {
       secondaryText,
       href,
       onClick,
+      level,
       ...otherProps
     } = this.props;
-
+    let style;
+    if (level > 0) {
+      const l = 16 + level * 16;
+      style = { paddingLeft: `${l}px` };
+    }
     return (
       <ListItem
+        style={style}
         type={type}
         icon={icon}
         activated={activated}
@@ -56,6 +62,7 @@ Item.defaultProps = {
   imgLabel: null,
   secondaryText: null,
   href: null,
+  level: 0,
 };
 
 Item.propTypes = {
@@ -70,4 +77,5 @@ Item.propTypes = {
   secondaryText: PropTypes.string,
   href: PropTypes.string,
   onClick: PropTypes.func.isRequired,
+  level: PropTypes.number,
 };

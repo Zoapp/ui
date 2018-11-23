@@ -6,7 +6,8 @@
  */
 import React from "react";
 import PropTypes from "prop-types";
-import { List, ListItem } from "zrmc";
+import { List } from "zrmc";
+import Item from "./item";
 
 const TreeView = ({ items, selectedItem, onSelect, className, style }) => (
   <List className={className} style={style}>
@@ -32,7 +33,7 @@ const TreeView = ({ items, selectedItem, onSelect, className, style }) => (
         cn = "selectedListItem";
       }
       return (
-        <ListItem
+        <Item
           imgSrc={imgSrc}
           icon={icon}
           key={item.id}
@@ -43,7 +44,7 @@ const TreeView = ({ items, selectedItem, onSelect, className, style }) => (
           className={cn}
         >
           {content}
-        </ListItem>
+        </Item>
       );
     })}
   </List>
@@ -60,6 +61,7 @@ TreeView.propTypes = {
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       name: PropTypes.string,
       icon: PropTypes.string,
+      children: PropTypes.arrayOf(PropTypes.shape({})),
     }),
   ).isRequired,
   selectedItem: PropTypes.number.isRequired,

@@ -16,20 +16,36 @@ const TreeViews = () => (
           {
             id: "i1",
             name: "Item 1",
-            icon: "add",
+            icon: "folder",
             color: "gray",
+            children: [
+              {
+                id: "i2a",
+                name: "SubItem 1",
+                icon: "insert_drive_file",
+                color: "gray",
+              },
+              {
+                id: "i2b",
+                name: "SubItem 2",
+                icon: "folder",
+                color: "gray",
+                children: [],
+              },
+            ],
           },
           {
             id: "i2",
             name: "Item 2",
-            icon: "add",
+            icon: "insert_drive_file",
             color: "gray",
           },
           {
             id: "i3",
             name: "Item 3",
-            icon: "add",
+            icon: "folder",
             color: "gray",
+            children: [],
           },
         ]}
         selectedItem={-1}

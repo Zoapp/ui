@@ -7,6 +7,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { ListItem } from "zrmc";
+import ItemGraphics from "./itemGraphics";
 
 const MDC_LISTITEM = "mdc-list-item";
 
@@ -23,7 +24,10 @@ export default class Item extends Component {
       secondaryText,
       href,
       onClick,
+      onCollapse,
       level,
+      arrow,
+      collapsed,
       ...otherProps
     } = this.props;
     let style;
@@ -35,7 +39,6 @@ export default class Item extends Component {
       <ListItem
         style={style}
         type={type}
-        icon={icon}
         activated={activated}
         imgSrc={imgSrc}
         imgSize={imgSize}
@@ -45,6 +48,13 @@ export default class Item extends Component {
         onClick={onClick}
         props={otherProps}
       >
+        <ItemGraphics
+          icon={icon}
+          arrow={arrow}
+          collapsed={collapsed}
+          disabled={!activated}
+          onCollapse={onCollapse}
+        />
         {children}
       </ListItem>
     );
@@ -63,6 +73,7 @@ Item.defaultProps = {
   secondaryText: null,
   href: null,
   level: 0,
+  arrow: false,
 };
 
 Item.propTypes = {
@@ -77,5 +88,8 @@ Item.propTypes = {
   secondaryText: PropTypes.string,
   href: PropTypes.string,
   onClick: PropTypes.func.isRequired,
+  onCollapse: PropTypes.func,
   level: PropTypes.number,
+  arrow: PropTypes.bool,
+  collapsed: PropTypes.bool,
 };

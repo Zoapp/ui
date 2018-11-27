@@ -15,23 +15,16 @@ const renderItem = (
   index,
   selectedItem,
   onSelect,
+  onCollapse,
   selectedLevel = 0,
   level = 0,
 ) => {
   const content = item.name;
-  let imgSrc;
-  let icon;
-  if (item.icon) {
+  const { icon } = item;
+  if (icon) {
     let { color } = item;
     if (!color) {
       color = "gray";
-    }
-    if (item.icon.endsWith(".svg")) {
-      imgSrc = item.icon;
-    } else if (item.icon.endsWith(".png")) {
-      imgSrc = item.icon;
-    } else {
-      ({ icon } = item);
     }
   }
   let cn = "selectableListItem";
@@ -41,20 +34,24 @@ const renderItem = (
   list.push(
     <Item
       level={level}
-      imgSrc={imgSrc}
       icon={icon}
       key={item.id}
       onClick={(e) => {
         e.preventDefault();
-        onSelect(index, level);
+        onSelect(index, level, item.id);
+      }}
+      onCollapse={() => {
+        onCollapse(index, level, item.id);
       }}
       className={cn}
+      arrow={!!item.children}
+      collapsed={item.collapsed}
+      activated={item.activated}
     >
       {content}
     </Item>,
   );
-  if (item.children) {
-    // TODO
+  if (item.children && !item.collapsed) {
     item.children.map((sitem, sindex) =>
       renderItem(
         list,
@@ -62,6 +59,7 @@ const renderItem = (
         sindex,
         selectedItem,
         onSelect,
+        onCollapse,
         selectedLevel,
         level + 1,
       ),
@@ -69,11 +67,18 @@ const renderItem = (
   }
 };
 
-const TreeView = ({ items, selectedItem, onSelect, className, style }) => (
+const TreeView = ({
+  items,
+  selectedItem,
+  onSelect,
+  onCollapse,
+  className,
+  style,
+}) => (
   <List className={className} style={style}>
     {items.map((item, index) => {
       const list = [];
-      renderItem(list, item, index, selectedItem, onSelect);
+      renderItem(list, item, index, selectedItem, onSelect, onCollapse);
       return list;
     })}
   </List>
@@ -97,6 +102,7 @@ TreeView.propTypes = {
   onSelect: PropTypes.func.isRequired,
   className: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
+  onCollapse: PropTypes.func,
 };
 
 export default TreeView;

@@ -54,9 +54,7 @@ exports[`TableComponent renders items 1`] = `
         <td
           className="zui-table_icon"
         >
-          <div>
-            
-          </div>
+          <div />
         </td>
       </tr>
     </tbody>
@@ -96,9 +94,7 @@ exports[`TableComponent renders items with numerical ids 1`] = `
         <td
           className="zui-table_icon"
         >
-          <div>
-            
-          </div>
+          <div />
         </td>
       </tr>
     </tbody>

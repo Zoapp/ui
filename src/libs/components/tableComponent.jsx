@@ -37,21 +37,7 @@ const TableComponent = ({
         {thead}
         <tbody>
           {items.map((item, index) => {
-            let icon = "";
-            if (item.icon) {
-              let { color } = item;
-              if (!color) {
-                color = "transparent";
-              }
-              if (item.icon.endsWith(".svg")) {
-                icon = <img style={{}} src={item.icon} alt={item.name} />;
-              } else if (item.icon.endsWith(".png")) {
-                icon = <img src={item.icon} alt={item.name} />;
-              } else {
-                icon = <Icon style={{}} name={item.icon} />;
-              }
-            }
-            const { values } = item;
+            const { icon, values } = item;
             let cn = "selectableListItem";
             if (selectedItem === index) {
               cn = "selectedListItem";

@@ -279,7 +279,7 @@
 .zui-table_icon > div > * {
   width: 36px;
   height: 36px;
-  padding-top: 6px;
+  padding: 6px;
 }
 
 .zui-table_cell {

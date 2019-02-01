@@ -8877,10 +8877,10 @@ yargs@^12.0.4:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
 
-zrmc@0.12.4:
-  version "0.12.4"
-  resolved "https://registry.yarnpkg.com/zrmc/-/zrmc-0.12.4.tgz#4acf8ca2a44140d6ac1f21bd466bf8d541fb32af"
-  integrity sha512-uAT7pzI+dWSjuer6duf2VUZr78B359HppBQAFxQmGZsgx8Gp8leTNklMyQ4Wez0t4FAhx4rHrX8vqhdTL/OGBw==
+zrmc@0.12.5:
+  version "0.12.5"
+  resolved "https://registry.yarnpkg.com/zrmc/-/zrmc-0.12.5.tgz#9e754405ed0971d552593cb6ba7460941afbe5fc"
+  integrity sha512-QR3ECSQV8hFz41IrBIcFGe2d+04NeirBxAIUJ+HT4Jn/usC/CyTlebwsdwDHB3WSX8WI81YCLa3OJgeYicr3Xw==
   dependencies:
     dialog-polyfill "^0.4.9"
     prop-types "15.6.0"

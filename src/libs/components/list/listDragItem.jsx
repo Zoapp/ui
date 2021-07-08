@@ -4,10 +4,11 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { Component, Children } from "react";
+import React, { Component } from "react";
+import { findDOMNode } from "react-dom";
 import PropTypes from "prop-types";
 import { DragSource, DropTarget } from "react-dnd";
-import Zrmc, { Icon } from "zrmc";
+import { ListItem } from "zrmc";
 
 const MDC_LISTITEM = "mdc-list-item";
 
@@ -107,70 +108,30 @@ export default class ListDragItem extends Component {
     delete otherProps.onDrop;
     delete otherProps.isDragging;
 
-    let classes = MDC_LISTITEM;
-    let graphic;
-    if (activated) {
-      classes += " mdc-list-item--activated";
-    }
-    if (icon) {
-      graphic = (
-        <Icon
-          className="mdc-list-item__graphic"
-          aria-hidden="true"
-          name={icon}
-        />
-      );
-    } else if (imgSrc) {
-      graphic = (
-        <img
-          className="mdc-list-item__graphic"
-          src={imgSrc}
-          width={imgSize}
-          height={imgSize}
-          alt={imgLabel}
-        />
-      );
-    }
-    let meta;
-    let text = Children.map(children, (child) => {
-      if (child.props && child.props.mdcElement === "mdc-list-item__meta") {
-        meta = child;
-        return null;
-      }
-      return child;
-    });
-    if (secondaryText) {
-      text = (
-        <span className="mdc-list-item__text">
-          {text}
-          <span className="mdc-list-item__secondary-text">{secondaryText}</span>
-        </span>
-      );
-    }
-    let el;
-    if (type === "a") {
-      el = (
-        <a className={classes} href={href} onClick={onClick}>
-          {graphic}
-          {text}
-          {meta}
-        </a>
-      );
-    } else {
-      el = (
-        <li
-          role="menuitem"
-          className={classes}
-          onKeyPress={() => {}}
-          onClick={onClick}
-        >
-          {graphic}
-          {text}
-          {meta}
-        </li>
-      );
-    }
-    return connectDragSource(connectDropTarget(Zrmc.render(el, otherProps)));
+    return (
+      <ListItem
+        type={type}
+        icon={icon}
+        activated={activated}
+        imgSrc={imgSrc}
+        imgSize={imgSize}
+        imgLabel={imgLabel}
+        secondaryText={secondaryText}
+        href={href}
+        onClick={onClick}
+        props={otherProps}
+        /* eslint-disable react/no-find-dom-node */
+        // TODO react-dnd doesn't work with findDOMNode replacement
+        // see : https://github.com/react-dnd/react-dnd/issues/998
+        ref={(instance) => {
+          connectDropTarget(findDOMNode(instance));
+          connectDragSource(findDOMNode(instance));
+        }}
+        /* eslint-enaable react/no-find-dom-node */
+      >
+        {children}
+      </ListItem>
+    );
   }
 }
 

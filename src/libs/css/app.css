@@ -438,6 +438,28 @@
   margin-top: 12px;
 }
 
+.zui_treeview-graphics {
+  height: 24px;
+}
+
+.zui_treeview-arrow {
+  cursor: pointer;
+  margin-right: 0px;
+}
+
+.zui_treeview-arrow:hover {
+  color: #552682;
+}
+
+.zui_treeview-icon {
+  margin-right: 8px;
+}
+
+.zui_treeview-arrow-hidden {
+  visibility: hidden;
+  margin-right: 0px;
+}
+
 .mdc-drawer__footer {
   position: relative;
   margin-top: auto;
